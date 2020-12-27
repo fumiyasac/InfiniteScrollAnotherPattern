@@ -17,19 +17,23 @@ class CustomViewBase: UIView {
     weak var contentView: UIView!
 
     // MARK: - Override
+
     // このカスタムビューをコードで使用する際の初期化処理
     required override init(frame: CGRect) {
         super.init(frame: frame)
+
         initContentView()
     }
 
     // このカスタムビューをInterfaceBuilderで使用する際の初期化処理
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+
         initContentView()
     }
 
     // MARK: - Private Function
+
     // コンテンツ表示用Viewの初期化処理
     private func initContentView() {
 

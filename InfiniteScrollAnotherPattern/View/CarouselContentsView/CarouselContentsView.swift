@@ -11,12 +11,12 @@ import UIKit
 
 final class CarouselContentsView: CustomViewBase {
 
-    var carouselTitle: String?
-    var contentKey: String?
+    private (set)var carouselTitle: String?
+    private (set)var contentKey: String?
 
     @IBOutlet private weak var carouselTitleLabel: UILabel!
 
-    // MARK: - Static Function
+    // MARK: - Class Function
 
     // MEMO: 他のView要素からこのView要素を表示・生成するためのメソッド
     class func make() -> CarouselContentsView {

@@ -21,7 +21,7 @@ final class CarouselScrollView: UIScrollView {
 
     // カルーセル部分のタイトル表示部分におけるView要素の配列
     var carouselTitleViews: [CarouselTitleView] {
-        return contentView.subviews.compactMap({ $0 as? CarouselTitleView })
+        return contentView.subviews.compactMap { $0 as? CarouselTitleView }
     }
 
     // 表示されている部分のFrame値
@@ -103,9 +103,14 @@ final class CarouselScrollView: UIScrollView {
                 // MEMO: UIScrollView内のContentViewに追加するView要素を初期化する
                 carouselTitleView.translatesAutoresizingMaskIntoConstraints = false
                 carouselTitleView.backgroundColor = isSelection ? UIColor.red : UIColor.white
-                // MEMO: ここでは余白やタイトル文言をセットする
-                carouselTitleView.setCarousel(title: targetTitle, contentKey: contentsView.contentKey ?? "", surplusWidth: targetSurplusWidth)
-                carouselTitleView.titleLabel.textColor = isSelection ? .white : .black
+
+                // MEMO: ここで余白やタイトル文言をセットする
+                carouselTitleView.setCarousel(
+                    title: targetTitle,
+                    color: isSelection ? .white : .black,
+                    contentKey: contentsView.contentKey ?? "",
+                    surplusWidth: targetSurplusWidth
+                )
                 contentView.addSubview(carouselTitleView)
             }
         }

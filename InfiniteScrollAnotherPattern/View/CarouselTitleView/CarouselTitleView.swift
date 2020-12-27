@@ -11,11 +11,11 @@ import UIKit
 
 final class CarouselTitleView: CustomViewBase {
 
-    @IBOutlet weak var leadingMargin: NSLayoutConstraint!
-    @IBOutlet weak var trailingMargin: NSLayoutConstraint!
+    @IBOutlet private weak var leadingMargin: NSLayoutConstraint!
+    @IBOutlet private weak var trailingMargin: NSLayoutConstraint!
     @IBOutlet weak var titleLabel: UILabel!
 
-    var contentKey: String = ""
+    private (set)var contentKey: String = ""
 
     // MARK: - Class Function
 
@@ -48,8 +48,8 @@ final class CarouselTitleView: CustomViewBase {
 
     // MARK: - Function
 
-    // カルーセル表示用タイトルをセットする
-    func setCarousel(title: String, contentKey: String, surplusWidth: CGFloat = 0.0) {
+    // カルーセル表示用タイトルを外部クラス
+    func setCarousel(title: String, color: UIColor, contentKey: String, surplusWidth: CGFloat = 0.0) {
 
         // コンテンツ表示用のキー値を取得する
         self.contentKey = contentKey
@@ -57,6 +57,7 @@ final class CarouselTitleView: CustomViewBase {
         // タイトル文字列をラベルにセットする
         titleLabel.text = title
         titleLabel.sizeToFit()
+        titleLabel.textColor = color
 
         // 左右余白を追加する
         addSurplusWidth(surplusWidth)
