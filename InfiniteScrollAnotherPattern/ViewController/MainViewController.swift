@@ -10,26 +10,40 @@ import UIKit
 
 // MEMO: 元記事＆元リポジトリを参考に無限すスクロールを実装する
 // ← 元記事: https://qiita.com/HirotoshiKawauchi/items/92bccea0fcd4468e59a0
-// ← 元リポジトリ:
+// ← 元リポジトリ: https://github.com/HirotoshiKawauchi/InfinitePaging
 
 final class MainViewController: UIViewController {
 
-    @IBOutlet weak private var carouselScrollView: CarouselScrollView!
-    @IBOutlet weak private var selectionCarouselScrollView: CarouselScrollView!
-    @IBOutlet weak private var paginateScrollView: UIScrollView!
+    // MEMO: InterfaceBuilder上における設定のポイント
+    //
+
+    // MARK: - Properties
+
+    // MEMO:
+    @IBOutlet private weak var carouselScrollView: CarouselScrollView!
+    @IBOutlet private weak var selectionCarouselScrollView: CarouselScrollView!
+
+    // MEMO:
+    @IBOutlet private weak var paginateScrollView: UIScrollView!
 
     private var carouselContentsViews: [CarouselContentsView] = []
 
+    private var centerTabIndex: Int = 0
+
+    private weak var selectionMaskLayer: CAShapeLayer!
+    private let selectionMaskCornerRadius: CGFloat = 40.0
+
     // MARK: - Enum
 
-    enum displayPosition: Int {
+    enum DisplayPosition: Int {
+
         // MEMO: コンテンツ表示部分のスクロール位置のEnum定義
         case left
         case center
         case right
 
         // MEMO: スクロール時に表示内容を入れ替えるために利用する
-        func inverse() -> displayPosition {
+        func inverse() -> DisplayPosition {
             switch self {
             case .left:
                 return .right
@@ -44,7 +58,7 @@ final class MainViewController: UIViewController {
     // MARK: - Computed Property
 
     var selectedCarouselContentsView: CarouselContentsView? {
-        return nil
+        return viewAt(position: .center)
     }
 
     // MARK: - Override
@@ -52,16 +66,34 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        carouselScrollView.delegate = self
-        selectionCarouselScrollView.delegate = self
-        paginateScrollView.delegate = self
-
         view.layoutIfNeeded()
+        setupScrollViews()
         setupSelectionMask()
-        setup()
+        setupCarouselContents()
     }
 
-    private func setup() {
+    // MARK: - Private Function
+
+    // ※1: 画面の初期設定に関する設定
+
+    private func setupScrollViews() {
+
+        //
+        carouselScrollView.delegate = self
+        carouselScrollView.showsHorizontalScrollIndicator = false
+
+        //
+        selectionCarouselScrollView.delegate = self
+        selectionCarouselScrollView.showsHorizontalScrollIndicator = false
+        selectionCarouselScrollView.isUserInteractionEnabled = false
+        selectionCarouselScrollView.delaysContentTouches = false
+
+        //
+        paginateScrollView.delegate = self
+        paginateScrollView.showsHorizontalScrollIndicator = false
+    }
+
+    private func setupCarouselContents() {
         let titles: [String] = ["モルモラット", "ブルホーン", "タイグリス", "ラビーナ",
                                 "ドランシア", "ヴァイパー", "サラブレード", "ラム",
                                 "ハマーコング", "クックル", "ライカ", "ワイルドボウ"]
@@ -69,7 +101,7 @@ final class MainViewController: UIViewController {
                                      "E", "F", "G", "H",
                                      "I", "J", "K", "L"]
         
-        var contents: [String: String] = [:]
+        var contents: [String : String] = [:]
         for (index, key) in contentKeys.enumerated() {
             contents[key] = titles[index]
         }
@@ -91,7 +123,7 @@ final class MainViewController: UIViewController {
         scrollToHorizontalCenter(index: carouselContentsViews.count)
     }
 
-    func viewAt(position: displayPosition) -> CarouselContentsView? {
+    func viewAt(position: DisplayPosition) -> CarouselContentsView? {
         var view: UIView?
         if position.rawValue < paginateScrollView.subviews.count {
             view = paginateScrollView.subviews[position.rawValue].subviews.last
@@ -107,7 +139,7 @@ final class MainViewController: UIViewController {
         return nil
     }
     
-    func set(view: CarouselContentsView, at position: displayPosition, newIndex: Int? = nil) {
+    func setCarouselContentsView(view: CarouselContentsView, at position: DisplayPosition, newIndex: Int? = nil) {
         if let currentcarouselContentsView = viewAt(position: position),
             let selectedView = viewAt(position: .center),
             let currentIndex = carouselContentsViews.firstIndex(of: currentcarouselContentsView) {
@@ -128,9 +160,9 @@ final class MainViewController: UIViewController {
             return
         }
         
-        set(view: view, at: .center)
-        set(view: carouselContentsViews[(index - 1 + carouselContentsViews.count) % carouselContentsViews.count], at: .left)
-        set(view: carouselContentsViews[(index + 1) % carouselContentsViews.count], at: .right)
+        setCarouselContentsView(view: view, at: .center)
+        setCarouselContentsView(view: carouselContentsViews[(index - 1 + carouselContentsViews.count) % carouselContentsViews.count], at: .left)
+        setCarouselContentsView(view: carouselContentsViews[(index + 1) % carouselContentsViews.count], at: .right)
     }
     
     func resetContentViewsPosition(centerIndex: Int) {
@@ -141,7 +173,7 @@ final class MainViewController: UIViewController {
         selectedView(view: carouselContentsViews[centerIndex], animated: false)
     }
     
-    func removeViewAt(position: displayPosition) {
+    func removeViewAt(position: DisplayPosition) {
         guard let view = viewAt(position: position) else {
             return
         }
@@ -149,12 +181,9 @@ final class MainViewController: UIViewController {
         view.removeFromSuperview()
     }
     
-    var selectedView: CarouselContentsView? {
-        return viewAt(position: .center)
-    }
+
     
-    weak var selectionMaskLayer: CAShapeLayer!
-    let selectionMaskCornerRadius: CGFloat = 40.0
+
     func setupSelectionMask() {
         let maskLayer = CAShapeLayer()
         maskLayer.frame.size.height = selectionCarouselScrollView.bounds.height
@@ -168,7 +197,7 @@ final class MainViewController: UIViewController {
         
         let isTabMoving: Bool = paginateScrollView.contentOffset.x == paginateScrollView.bounds.width
         
-        guard let selectedView = selectedView,
+        guard let selectedView = selectedCarouselContentsView,
               let selectedIndex = carouselContentsViews.firstIndex(of: selectedView),
             let nextView = viewAt(position: isTabMoving ? .center : paginateScrollView.contentOffset.x < paginateScrollView.bounds.width ? .left : .right),
             let nextIndex = carouselContentsViews.firstIndex(of: nextView) else {
@@ -203,7 +232,7 @@ final class MainViewController: UIViewController {
         selectionMaskLayer.path = UIBezierPath(roundedRect: roundRect, cornerRadius: selectionMaskCornerRadius).cgPath
     }
     
-    var centerTabIndex: Int = 0
+
     func scrollToHorizontalCenter(index: Int, animated: Bool = false) {
         let centeringTab = carouselScrollView.carouselTitleViews[index]
         var centeringTabOffset = carouselScrollView.visibleFrame.minX - (carouselScrollView.visibleFrame.midX - centeringTab.frame.midX)
@@ -235,8 +264,8 @@ final class MainViewController: UIViewController {
     }
     
     func trackingTabScrollView() {
-        let position: displayPosition = paginateScrollView.contentOffset.x < paginateScrollView.bounds.width ? .left : .right
-        guard let selectedView = selectedView,
+        let position: DisplayPosition = paginateScrollView.contentOffset.x < paginateScrollView.bounds.width ? .left : .right
+        guard let selectedView = selectedCarouselContentsView,
               let selectedTab = findMostCenterTabIndexForTitle(title: selectedView.carouselTitle ?? ""),
             let nextView = viewAt(position: position),
             let nextTab = findMostCenterTabIndexForTitle(title: nextView.carouselTitle ?? "") else {
@@ -298,7 +327,7 @@ extension MainViewController: UIScrollViewDelegate {
     }
     
     private func recenterPagingScrollView() {
-        var position = displayPosition.center
+        var position = DisplayPosition.center
         if paginateScrollView.contentOffset.x <= 0 {
             position = .left
         } else if paginateScrollView.contentOffset.x >= 2 * paginateScrollView.bounds.width {
