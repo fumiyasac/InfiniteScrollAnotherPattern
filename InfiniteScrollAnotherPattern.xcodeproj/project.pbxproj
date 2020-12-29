@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE54C88522F4A33700F777BD /* CarouselScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54C88422F4A33700F777BD /* CarouselScrollView.swift */; };
-		DE54C88822F4AB5C00F777BD /* CarouselTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54C88722F4AB5C00F777BD /* CarouselTitleView.swift */; };
-		DE54C88C22F4ABCF00F777BD /* CarouselTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE54C88B22F4ABCF00F777BD /* CarouselTitleView.xib */; };
-		DE54C89422F562C500F777BD /* CarouselContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54C89322F562C500F777BD /* CarouselContentsView.swift */; };
-		DE54C89622F562D200F777BD /* CarouselContentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE54C89522F562D200F777BD /* CarouselContentsView.xib */; };
 		DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */; };
 		DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D2322E6E83B00DB2C21 /* MainViewController.swift */; };
 		DE958D2722E6E83B00DB2C21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE958D2522E6E83B00DB2C21 /* Main.storyboard */; };
@@ -22,6 +17,10 @@
 		DE958D5C22F01FBC00DB2C21 /* NSObjectProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5B22F01FBC00DB2C21 /* NSObjectProtocolExtension.swift */; };
 		DE958D5E22F01FCE00DB2C21 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5D22F01FCE00DB2C21 /* UICollectionViewExtension.swift */; };
 		DE958D6022F0204E00DB2C21 /* CustomViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5F22F0204E00DB2C21 /* CustomViewBase.swift */; };
+		DE9BEA2B259BBD1E000E94B0 /* UILabelDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9BEA2A259BBD1E000E94B0 /* UILabelDecorator.swift */; };
+		DE9BEA3C259BBDFF000E94B0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9BEA3B259BBDFF000E94B0 /* UIColorExtension.swift */; };
+		DE9BEA41259BBE40000E94B0 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9BEA40259BBE40000E94B0 /* UIViewControllerExtension.swift */; };
+		DE9BEA46259BBE5D000E94B0 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9BEA45259BBE5D000E94B0 /* UITableViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DE54C88422F4A33700F777BD /* CarouselScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselScrollView.swift; sourceTree = "<group>"; };
-		DE54C88722F4AB5C00F777BD /* CarouselTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTitleView.swift; sourceTree = "<group>"; };
-		DE54C88B22F4ABCF00F777BD /* CarouselTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselTitleView.xib; sourceTree = "<group>"; };
-		DE54C89322F562C500F777BD /* CarouselContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselContentsView.swift; sourceTree = "<group>"; };
-		DE54C89522F562D200F777BD /* CarouselContentsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselContentsView.xib; sourceTree = "<group>"; };
 		DE958D1E22E6E83B00DB2C21 /* InfiniteScrollAnotherPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteScrollAnotherPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE958D2322E6E83B00DB2C21 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +57,10 @@
 		DE958D5B22F01FBC00DB2C21 /* NSObjectProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocolExtension.swift; sourceTree = "<group>"; };
 		DE958D5D22F01FCE00DB2C21 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		DE958D5F22F0204E00DB2C21 /* CustomViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewBase.swift; sourceTree = "<group>"; };
+		DE9BEA2A259BBD1E000E94B0 /* UILabelDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelDecorator.swift; sourceTree = "<group>"; };
+		DE9BEA3B259BBDFF000E94B0 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		DE9BEA40259BBE40000E94B0 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		DE9BEA45259BBE5D000E94B0 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,24 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DE54C88622F4AB3500F777BD /* CarouselTitleView */ = {
-			isa = PBXGroup;
-			children = (
-				DE54C88722F4AB5C00F777BD /* CarouselTitleView.swift */,
-				DE54C88B22F4ABCF00F777BD /* CarouselTitleView.xib */,
-			);
-			path = CarouselTitleView;
-			sourceTree = "<group>";
-		};
-		DE54C89222F561AC00F777BD /* CarouselContentsView */ = {
-			isa = PBXGroup;
-			children = (
-				DE54C89322F562C500F777BD /* CarouselContentsView.swift */,
-				DE54C89522F562D200F777BD /* CarouselContentsView.xib */,
-			);
-			path = CarouselContentsView;
-			sourceTree = "<group>";
-		};
 		DE958D1522E6E83B00DB2C21 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +116,8 @@
 				DE958D2822E6E83F00DB2C21 /* Assets.xcassets */,
 				DE958D5522F01F0E00DB2C21 /* Classes */,
 				DE958D5722F01F3800DB2C21 /* Extension */,
+				DE9BEA29259BBCF9000E94B0 /* Modules */,
+				DE9BEA4A259BBE6E000E94B0 /* Presentation */,
 				DE958D5622F01F3000DB2C21 /* Storyboard */,
 				DE958D5922F01F5300DB2C21 /* View */,
 				DE958D5822F01F4800DB2C21 /* ViewController */,
@@ -164,7 +146,6 @@
 		DE958D5522F01F0E00DB2C21 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DE54C88422F4A33700F777BD /* CarouselScrollView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -183,6 +164,9 @@
 			children = (
 				DE958D5B22F01FBC00DB2C21 /* NSObjectProtocolExtension.swift */,
 				DE958D5D22F01FCE00DB2C21 /* UICollectionViewExtension.swift */,
+				DE9BEA3B259BBDFF000E94B0 /* UIColorExtension.swift */,
+				DE9BEA40259BBE40000E94B0 /* UIViewControllerExtension.swift */,
+				DE9BEA45259BBE5D000E94B0 /* UITableViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -199,10 +183,39 @@
 			isa = PBXGroup;
 			children = (
 				DE958D5F22F0204E00DB2C21 /* CustomViewBase.swift */,
-				DE54C89222F561AC00F777BD /* CarouselContentsView */,
-				DE54C88622F4AB3500F777BD /* CarouselTitleView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DE9BEA29259BBCF9000E94B0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				DE9BEA2A259BBD1E000E94B0 /* UILabelDecorator.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DE9BEA4A259BBE6E000E94B0 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DE9BEA4B259BBE7C000E94B0 /* Contract */,
+				DE9BEA4C259BBE83000E94B0 /* Presenter */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DE9BEA4B259BBE7C000E94B0 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contract;
+			sourceTree = "<group>";
+		};
+		DE9BEA4C259BBE83000E94B0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,10 +323,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE958D2C22E6E83F00DB2C21 /* LaunchScreen.storyboard in Resources */,
-				DE54C88C22F4ABCF00F777BD /* CarouselTitleView.xib in Resources */,
 				DE958D2922E6E83F00DB2C21 /* Assets.xcassets in Resources */,
 				DE958D2722E6E83B00DB2C21 /* Main.storyboard in Resources */,
-				DE54C89622F562D200F777BD /* CarouselContentsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,11 +350,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE958D6022F0204E00DB2C21 /* CustomViewBase.swift in Sources */,
-				DE54C88822F4AB5C00F777BD /* CarouselTitleView.swift in Sources */,
-				DE54C88522F4A33700F777BD /* CarouselScrollView.swift in Sources */,
+				DE9BEA3C259BBDFF000E94B0 /* UIColorExtension.swift in Sources */,
+				DE9BEA2B259BBD1E000E94B0 /* UILabelDecorator.swift in Sources */,
 				DE958D5E22F01FCE00DB2C21 /* UICollectionViewExtension.swift in Sources */,
-				DE54C89422F562C500F777BD /* CarouselContentsView.swift in Sources */,
+				DE9BEA41259BBE40000E94B0 /* UIViewControllerExtension.swift in Sources */,
 				DE958D5C22F01FBC00DB2C21 /* NSObjectProtocolExtension.swift in Sources */,
+				DE9BEA46259BBE5D000E94B0 /* UITableViewExtension.swift in Sources */,
 				DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */,
 				DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */,
 			);
