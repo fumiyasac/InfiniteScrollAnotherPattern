@@ -17,17 +17,6 @@ final class CarouselTitleView: CustomViewBase {
 
     private (set)var contentKey: String = ""
 
-    // MARK: - Class Function
-
-    /*
-    // MEMO: 他のView要素からこのView要素を表示・生成するためのメソッド
-    class func make() -> CarouselTitleView {
-        let nib = UINib(nibName: "CarouselTitleView", bundle: nil)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! CarouselTitleView
-        return view
-    }
-    */
-
     // ラベルに表示する文字列の長さを取得する
     class func getLabelWidth(title: String) -> CGFloat {
  

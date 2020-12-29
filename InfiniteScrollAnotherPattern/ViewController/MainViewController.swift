@@ -9,8 +9,8 @@
 import UIKit
 
 // MEMO: 元記事＆元リポジトリを参考に無限すスクロールを実装する
-// ← 元記事: https://qiita.com/HirotoshiKawauchi/items/92bccea0fcd4468e59a0
-// ← 元リポジトリ: https://github.com/HirotoshiKawauchi/InfinitePaging
+// 元記事: https://qiita.com/HirotoshiKawauchi/items/92bccea0fcd4468e59a0
+// 元リポジトリ: https://github.com/HirotoshiKawauchi/InfinitePaging
 
 final class MainViewController: UIViewController {
 
@@ -78,22 +78,26 @@ final class MainViewController: UIViewController {
 
     private func setupScrollViews() {
 
-        //
+        // MEMO: ポイントとなるのはタブ表示用のUIScrollView表示を2つ利用しているのがポイントになります。
+        
+        // carouselScrollView:
         carouselScrollView.delegate = self
         carouselScrollView.showsHorizontalScrollIndicator = false
 
-        //
+        // selectionCarouselScrollView:
         selectionCarouselScrollView.delegate = self
         selectionCarouselScrollView.showsHorizontalScrollIndicator = false
         selectionCarouselScrollView.isUserInteractionEnabled = false
         selectionCarouselScrollView.delaysContentTouches = false
 
-        //
+        // paginateScrollView:
         paginateScrollView.delegate = self
         paginateScrollView.showsHorizontalScrollIndicator = false
     }
 
     private func setupCarouselContents() {
+        
+        // FIXME: 内容は後で適切なものに置き換える
         let titles: [String] = ["モルモラット", "ブルホーン", "タイグリス", "ラビーナ",
                                 "ドランシア", "ヴァイパー", "サラブレード", "ラム",
                                 "ハマーコング", "クックル", "ライカ", "ワイルドボウ"]
@@ -104,6 +108,8 @@ final class MainViewController: UIViewController {
         var contents: [String : String] = [:]
         for (index, key) in contentKeys.enumerated() {
             contents[key] = titles[index]
+            print(key)
+            print(titles[index])
         }
         
         for content in contents {

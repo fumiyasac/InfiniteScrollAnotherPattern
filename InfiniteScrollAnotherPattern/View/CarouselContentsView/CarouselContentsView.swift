@@ -16,15 +16,6 @@ final class CarouselContentsView: CustomViewBase {
 
     @IBOutlet private weak var carouselTitleLabel: UILabel!
 
-    // MARK: - Class Function
-
-    // MEMO: 他のView要素からこのView要素を表示・生成するためのメソッド
-    class func make() -> CarouselContentsView {
-        let nib = UINib(nibName: "CarouselContentsView", bundle: nil)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! CarouselContentsView
-        return view
-    }
-
     // MARK: - Function
 
     // コンテンツ表示用タイトルをセットする
