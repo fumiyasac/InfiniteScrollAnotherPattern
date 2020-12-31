@@ -17,9 +17,9 @@ extension UIColor {
     // https://dev.classmethod.jp/smartphone/utilty-extension-uicolor/
     // iOS13での変更点: scanHexInt32がdeprecatedとなったのでscanHexInt64を使用する
     convenience init(code: String, alpha: CGFloat = 1.0) {
-        var color: UInt32 = 0
+        var color: UInt64 = 0
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0
-        if Scanner(string: code.replacingOccurrences(of: "#", with: "")).scanHexInt32(&color) {
+        if Scanner(string: code.replacingOccurrences(of: "#", with: "")).scanHexInt64(&color) {
             r = CGFloat((color & 0xFF0000) >> 16) / 255.0
             g = CGFloat((color & 0x00FF00) >>  8) / 255.0
             b = CGFloat( color & 0x0000FF       ) / 255.0

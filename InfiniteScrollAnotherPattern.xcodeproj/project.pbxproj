@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */; };
 		DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D2322E6E83B00DB2C21 /* MainViewController.swift */; };
-		DE958D2722E6E83B00DB2C21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE958D2522E6E83B00DB2C21 /* Main.storyboard */; };
+		DE958D2722E6E83B00DB2C21 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE958D2522E6E83B00DB2C21 /* MainViewController.storyboard */; };
 		DE958D2922E6E83F00DB2C21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE958D2822E6E83F00DB2C21 /* Assets.xcassets */; };
 		DE958D2C22E6E83F00DB2C21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE958D2A22E6E83F00DB2C21 /* LaunchScreen.storyboard */; };
 		DE958D3722E6E83F00DB2C21 /* InfiniteScrollAnotherPatternTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D3622E6E83F00DB2C21 /* InfiniteScrollAnotherPatternTests.swift */; };
@@ -21,6 +21,9 @@
 		DE9BEA3C259BBDFF000E94B0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9BEA3B259BBDFF000E94B0 /* UIColorExtension.swift */; };
 		DE9BEA41259BBE40000E94B0 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9BEA40259BBE40000E94B0 /* UIViewControllerExtension.swift */; };
 		DE9BEA46259BBE5D000E94B0 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9BEA45259BBE5D000E94B0 /* UITableViewExtension.swift */; };
+		DEAC31FC259DD93200B72134 /* GlobalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */; };
+		DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */; };
+		DEAC320D259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEAC320B259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +47,7 @@
 		DE958D1E22E6E83B00DB2C21 /* InfiniteScrollAnotherPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteScrollAnotherPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE958D2322E6E83B00DB2C21 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		DE958D2622E6E83B00DB2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE958D2622E6E83B00DB2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainViewController.storyboard; sourceTree = "<group>"; };
 		DE958D2822E6E83F00DB2C21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE958D2B22E6E83F00DB2C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE958D2D22E6E83F00DB2C21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +64,9 @@
 		DE9BEA3B259BBDFF000E94B0 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE9BEA40259BBE40000E94B0 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		DE9BEA45259BBE5D000E94B0 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTabBarController.swift; sourceTree = "<group>"; };
+		DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
+		DEAC320C259DDAAB00B72134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GlobalTabBarControllerstoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 			children = (
 				DE958D2D22E6E83F00DB2C21 /* Info.plist */,
 				DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */,
+				DE958D2A22E6E83F00DB2C21 /* LaunchScreen.storyboard */,
 				DE958D2822E6E83F00DB2C21 /* Assets.xcassets */,
 				DE958D5522F01F0E00DB2C21 /* Classes */,
 				DE958D5722F01F3800DB2C21 /* Extension */,
@@ -153,8 +160,8 @@
 		DE958D5622F01F3000DB2C21 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				DE958D2522E6E83B00DB2C21 /* Main.storyboard */,
-				DE958D2A22E6E83F00DB2C21 /* LaunchScreen.storyboard */,
+				DEAC320B259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard */,
+				DE958D2522E6E83B00DB2C21 /* MainViewController.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -167,6 +174,7 @@
 				DE9BEA3B259BBDFF000E94B0 /* UIColorExtension.swift */,
 				DE9BEA40259BBE40000E94B0 /* UIViewControllerExtension.swift */,
 				DE9BEA45259BBE5D000E94B0 /* UITableViewExtension.swift */,
+				DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 		DE958D5822F01F4800DB2C21 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */,
 				DE958D2322E6E83B00DB2C21 /* MainViewController.swift */,
 			);
 			path = ViewController;
@@ -322,9 +331,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEAC320D259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard in Resources */,
 				DE958D2C22E6E83F00DB2C21 /* LaunchScreen.storyboard in Resources */,
 				DE958D2922E6E83F00DB2C21 /* Assets.xcassets in Resources */,
-				DE958D2722E6E83B00DB2C21 /* Main.storyboard in Resources */,
+				DE958D2722E6E83B00DB2C21 /* MainViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,10 +361,12 @@
 			files = (
 				DE958D6022F0204E00DB2C21 /* CustomViewBase.swift in Sources */,
 				DE9BEA3C259BBDFF000E94B0 /* UIColorExtension.swift in Sources */,
+				DEAC31FC259DD93200B72134 /* GlobalTabBarController.swift in Sources */,
 				DE9BEA2B259BBD1E000E94B0 /* UILabelDecorator.swift in Sources */,
 				DE958D5E22F01FCE00DB2C21 /* UICollectionViewExtension.swift in Sources */,
 				DE9BEA41259BBE40000E94B0 /* UIViewControllerExtension.swift in Sources */,
 				DE958D5C22F01FBC00DB2C21 /* NSObjectProtocolExtension.swift in Sources */,
+				DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */,
 				DE9BEA46259BBE5D000E94B0 /* UITableViewExtension.swift in Sources */,
 				DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */,
 				DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */,
@@ -393,12 +405,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DE958D2522E6E83B00DB2C21 /* Main.storyboard */ = {
+		DE958D2522E6E83B00DB2C21 /* MainViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DE958D2622E6E83B00DB2C21 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		DE958D2A22E6E83F00DB2C21 /* LaunchScreen.storyboard */ = {
@@ -407,6 +419,14 @@
 				DE958D2B22E6E83F00DB2C21 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DEAC320B259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEAC320C259DDAAB00B72134 /* Base */,
+			);
+			name = GlobalTabBarControllerstoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
