@@ -7,7 +7,8 @@ target 'InfiniteScrollAnotherPattern' do
 
   # Pods for InfiniteScrollAnotherPattern
   pod 'AlamofireImage'
-  pod 'Apollo'  
+  pod 'Apollo' 
+  pod 'RxSwift' 
 
   target 'InfiniteScrollAnotherPatternTests' do
     inherit! :search_paths

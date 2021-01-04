@@ -5,22 +5,26 @@ PODS:
   - Apollo (0.38.3):
     - Apollo/Core (= 0.38.3)
   - Apollo/Core (0.38.3)
+  - RxSwift (6.0.0)
 
 DEPENDENCIES:
   - AlamofireImage
   - Apollo
+  - RxSwift
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
     - Apollo
+    - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
   Apollo: b5c2427ff42bd23c4db399df1a60c8db34bda53c
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
 
-PODFILE CHECKSUM: 1c9773bd68aca2d5f44bbfa7e072291dae54e93c
+PODFILE CHECKSUM: 3f20f409115a429084d3a45599efc137708a8a7a
 
 COCOAPODS: 1.10.0
