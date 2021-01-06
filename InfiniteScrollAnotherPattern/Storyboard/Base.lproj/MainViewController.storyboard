@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,14 +16,73 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T6f-Vw-KF7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="vkw-qz-eON"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uWZ-Od-yft">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zo-CM-gIW">
+                                <rect key="frame" x="87.5" y="48" width="200" height="4"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ADo-xR-QD1"/>
+                                    <constraint firstAttribute="height" constant="4" id="fNH-0h-uMj"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIY-hb-NB5">
+                                <rect key="frame" x="0.0" y="52" width="375" height="615"/>
+                                <connections>
+                                    <segue destination="EVj-m5-Wn4" kind="embed" id="m9W-xz-9l1"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Zo-CM-gIW" firstAttribute="top" secondItem="T6f-Vw-KF7" secondAttribute="bottom" id="5de-VV-ma2"/>
+                            <constraint firstItem="T6f-Vw-KF7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Is4-Gu-Efz"/>
+                            <constraint firstItem="tIY-hb-NB5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RFo-Pd-3xD"/>
+                            <constraint firstItem="T6f-Vw-KF7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TBp-Ky-2ON"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tIY-hb-NB5" secondAttribute="trailing" id="Ub5-P1-8GH"/>
+                            <constraint firstItem="4Zo-CM-gIW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vqy-14-Ksl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tIY-hb-NB5" secondAttribute="bottom" id="Y3T-W1-xWF"/>
+                            <constraint firstItem="tIY-hb-NB5" firstAttribute="top" secondItem="4Zo-CM-gIW" secondAttribute="bottom" id="a2g-bx-rDR"/>
+                            <constraint firstItem="T6f-Vw-KF7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qcT-z2-uzr"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aeX-x6-jQf"/>
+                    <connections>
+                        <outlet property="categoryContentsContainerView" destination="tIY-hb-NB5" id="iNk-j3-eon"/>
+                        <outlet property="categoryTabCollectionView" destination="T6f-Vw-KF7" id="L50-VZ-hJA"/>
+                        <outlet property="categoryTabSelectBarView" destination="4Zo-CM-gIW" id="vnh-41-PEu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="165.59999999999999" y="132.68365817091455"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="4r6-CY-Tu8">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="EVj-m5-Wn4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4OO-jd-EbG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026" y="156"/>
+        </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
