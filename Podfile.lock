@@ -5,22 +5,36 @@ PODS:
   - Apollo (0.38.3):
     - Apollo/Core (= 0.38.3)
   - Apollo/Core (0.38.3)
+  - BulletinBoard (5.0.0)
+  - GRDB.swift (5.2.0):
+    - GRDB.swift/standard (= 5.2.0)
+  - GRDB.swift/standard (5.2.0)
+  - HorizonCalendar (1.6.5)
 
 DEPENDENCIES:
   - AlamofireImage
   - Apollo
+  - BulletinBoard
+  - GRDB.swift
+  - HorizonCalendar
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
     - Apollo
+    - BulletinBoard
+    - GRDB.swift
+    - HorizonCalendar
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
   Apollo: b5c2427ff42bd23c4db399df1a60c8db34bda53c
+  BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
+  GRDB.swift: f44f61fd032e176e3aadb1f70e15656dc50ca018
+  HorizonCalendar: bf90307200232779094ef5b85cb09a30a029c60a
 
-PODFILE CHECKSUM: 1c9773bd68aca2d5f44bbfa7e072291dae54e93c
+PODFILE CHECKSUM: 1b317d92a0ad89510f9803a7a949eea0e0818fcd
 
 COCOAPODS: 1.10.0
