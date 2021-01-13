@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -136,10 +136,11 @@
 			children = (
 				DE958D2D22E6E83F00DB2C21 /* Info.plist */,
 				DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */,
-				DE958D2A22E6E83F00DB2C21 /* LaunchScreen.storyboard */,
 				DE958D2822E6E83F00DB2C21 /* Assets.xcassets */,
 				DE958D5522F01F0E00DB2C21 /* Classes */,
+				DEBB023925AE7DE40080980C /* Domain */,
 				DE958D5722F01F3800DB2C21 /* Extension */,
+				DEBB023A25AE7DEA0080980C /* Infrastructure */,
 				DE9BEA29259BBCF9000E94B0 /* Modules */,
 				DE9BEA4A259BBE6E000E94B0 /* Presentation */,
 				DE958D5622F01F3000DB2C21 /* Storyboard */,
@@ -177,6 +178,7 @@
 		DE958D5622F01F3000DB2C21 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				DE958D2A22E6E83F00DB2C21 /* LaunchScreen.storyboard */,
 				DEAC320B259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard */,
 				DE958D2522E6E83B00DB2C21 /* MainViewController.storyboard */,
 			);
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				DE958D5F22F0204E00DB2C21 /* CustomViewBase.swift */,
+				DEBB023825AE78510080980C /* CategoryTabCollectionViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,6 +247,35 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		DEBB023825AE78510080980C /* CategoryTabCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CategoryTabCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		DEBB023925AE7DE40080980C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				DEBB023B25AE7DF50080980C /* Repository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		DEBB023A25AE7DEA0080980C /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		DEBB023B25AE7DF50080980C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		E3138C5CF5499C99D84C2C3A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,7 +286,6 @@
 				FBB15C7915712D40C10B15AB /* Pods-InfiniteScrollAnotherPatternTests.debug.xcconfig */,
 				424E527F9E3D097EC38D47DF /* Pods-InfiniteScrollAnotherPatternTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
