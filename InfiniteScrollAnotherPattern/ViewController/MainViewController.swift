@@ -68,6 +68,10 @@ final class MainViewController: UIViewController {
         setupCategoryContentsContainerView()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
     // MARK: - Private Function
 
     private func setupCategoryTabCollectionView() {
@@ -80,5 +84,6 @@ final class MainViewController: UIViewController {
 
     private func setupCategoryContentsContainerView() {
         
+        // MEMO: StoryboardでContainerViewを経由してUIPageViewControllerを配置している点に注意する
     }
 }
