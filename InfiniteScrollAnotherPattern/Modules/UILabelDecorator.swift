@@ -12,6 +12,7 @@ import UIKit
 final class UILabelDecorator {
 
     // MARK: - Static Function
+
     // 該当のUILabelに付与する属性を設定する
     static func getLabelAttributesBy(keys: (lineSpacing: CGFloat, font: UIFont, foregroundColor: UIColor)) -> [NSAttributedString.Key : Any] {
 
