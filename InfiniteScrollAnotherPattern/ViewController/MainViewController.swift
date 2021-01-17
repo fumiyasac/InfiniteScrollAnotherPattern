@@ -32,6 +32,9 @@ final class MainViewController: UIViewController {
 
     // MARK: - Properties
 
+    // タブ型UICollectionViewにおける表示セルをコピーする倍数
+    private let cellCopyCount: Int = 5
+
     // 現在表示しているViewControllerのタグ番号
     private var selectedPageViewControllerIndex: Int = 0
 
@@ -39,7 +42,7 @@ final class MainViewController: UIViewController {
     private var targetViewControllerLists: [UIViewController] = []
 
     // ContainerViewにEmbedしたUIPageViewControllerのインスタンスを保持する
-    private var pageViewController: UIPageViewController? = nil
+    private var pageViewController: UIPageViewController!
 
     // 現在のセル番号
     private var selectedCollectionViewIndex: Int!
@@ -47,16 +50,14 @@ final class MainViewController: UIViewController {
     // タブ型UICollectionViewにおけるX軸方向のScroll開始位置
     private var startCollectionViewPosX: CGFloat = 0
 
-    // タブ型UICollectionViewにおける表示セルをコピーする倍数
-    private let cellCopyCount: Int = 5
-
     // MARK: - @IBOutlet
 
     @IBOutlet private weak var categoryTabCollectionView: UICollectionView!
     @IBOutlet private weak var categoryTabSelectBarView: UIView!
     @IBOutlet private weak var categoryContentsContainerView: UIView!
 
-    // MARK: - Computed Property
+    // MEMO: バー表示をするUIViewの幅に関する制約
+    @IBOutlet private weak var categoryTabSelectBarViewWidthConstraint: NSLayoutConstraint!
 
     // MARK: - Override
 
@@ -65,7 +66,7 @@ final class MainViewController: UIViewController {
 
         setupCategoryTabCollectionView()
         setupCategoryTabSelectBarView()
-        setupCategoryContentsContainerView()
+        setupCategoryContentsPageViewController()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -75,15 +76,93 @@ final class MainViewController: UIViewController {
     // MARK: - Private Function
 
     private func setupCategoryTabCollectionView() {
-        
+
+        // MEMO: タブ型表現用UICollectionViewの初期設定
+
+        categoryTabCollectionView.delegate = self
+        categoryTabCollectionView.dataSource = self
+        categoryTabCollectionView.registerCustomCell(CategoryTabCollectionViewCell.self)
+
+        categoryTabCollectionView.delaysContentTouches = false
+        categoryTabCollectionView.showsHorizontalScrollIndicator = false
+        categoryTabCollectionView.showsVerticalScrollIndicator = false
     }
 
     private func setupCategoryTabSelectBarView() {
-        
+
+        // MEMO: バー表示をするUIViewの初期設定
+
+        categoryTabSelectBarView.backgroundColor = Constants.Color.categoryTabActive
+        categoryTabSelectBarView.layer.cornerRadius = CategoryTabCollectionViewCell.cellHeight / 2
+        categoryTabSelectBarView.layer.masksToBounds = true
     }
 
-    private func setupCategoryContentsContainerView() {
-        
+    private func setupCategoryContentsPageViewController() {
+
         // MEMO: StoryboardでContainerViewを経由してUIPageViewControllerを配置している点に注意する
+
+        // ContainerViewにEmbedしたUIPageViewControllerを取得する
+        self.children.forEach { childViewController in
+            guard let targetViewController = childViewController as? UIPageViewController else {
+                return
+            }
+            pageViewController = targetViewController
+        }
+
+        // UIPageViewControllerにおけるUIScrollViewDelegateの宣言
+        pageViewController.view.subviews.forEach { subView in
+            guard let scrollView = subView as? UIScrollView else {
+                return
+            }
+            scrollView.delegate = self
+        }
     }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension MainViewController: UICollectionViewDelegate {}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+
+    // セルの矩形サイズを設定する
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: CategoryTabCollectionViewCell.cellWidth, height: CategoryTabCollectionViewCell.cellHeight)
+    }
+
+    // セルの垂直方向の余白(margin)を設定する
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat.zero
+    }
+
+    // セルの水平方向の余白(margin)を設定する
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return CGFloat.zero
+    }
+
+    // セル内のアイテム間の余白(margin)調整を行う
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension MainViewController: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension MainViewController: UIScrollViewDelegate {
+    
 }

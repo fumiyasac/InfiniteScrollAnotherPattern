@@ -26,6 +26,9 @@
 		DEAC31FC259DD93200B72134 /* GlobalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */; };
 		DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */; };
 		DEAC320D259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEAC320B259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard */; };
+		DEC2C79025B46A160001BD20 /* CategoryTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */; };
+		DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */; };
+		DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C79D25B4772D0001BD20 /* AppConstants.swift */; };
 		F214B7164AFBC4B3908569D3 /* Pods_InfiniteScrollAnotherPattern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DA912FD8BFE6BEB104AFC1 /* Pods_InfiniteScrollAnotherPattern.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,9 @@
 		DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTabBarController.swift; sourceTree = "<group>"; };
 		DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
 		DEAC320C259DDAAB00B72134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GlobalTabBarControllerstoryboard.storyboard; sourceTree = "<group>"; };
+		DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabCollectionViewCell.swift; sourceTree = "<group>"; };
+		DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTabCollectionViewCell.xib; sourceTree = "<group>"; };
+		DEC2C79D25B4772D0001BD20 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		E4DA912FD8BFE6BEB104AFC1 /* Pods_InfiniteScrollAnotherPattern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InfiniteScrollAnotherPattern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB15C7915712D40C10B15AB /* Pods-InfiniteScrollAnotherPatternTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfiniteScrollAnotherPatternTests.debug.xcconfig"; path = "Target Support Files/Pods-InfiniteScrollAnotherPatternTests/Pods-InfiniteScrollAnotherPatternTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +144,7 @@
 				DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */,
 				DE958D2822E6E83F00DB2C21 /* Assets.xcassets */,
 				DE958D5522F01F0E00DB2C21 /* Classes */,
+				DEC2C79925B473620001BD20 /* Constants */,
 				DEBB023925AE7DE40080980C /* Domain */,
 				DE958D5722F01F3800DB2C21 /* Extension */,
 				DEBB023A25AE7DEA0080980C /* Infrastructure */,
@@ -250,6 +257,8 @@
 		DEBB023825AE78510080980C /* CategoryTabCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */,
+				DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */,
 			);
 			path = CategoryTabCollectionViewCell;
 			sourceTree = "<group>";
@@ -257,6 +266,7 @@
 		DEBB023925AE7DE40080980C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				DEC2C79525B472F70001BD20 /* DomainModel */,
 				DEBB023B25AE7DF50080980C /* Repository */,
 			);
 			path = Domain;
@@ -274,6 +284,21 @@
 			children = (
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		DEC2C79525B472F70001BD20 /* DomainModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DomainModel;
+			sourceTree = "<group>";
+		};
+		DEC2C79925B473620001BD20 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DEC2C79D25B4772D0001BD20 /* AppConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		E3138C5CF5499C99D84C2C3A /* Pods */ = {
@@ -412,6 +437,7 @@
 				DE958D2C22E6E83F00DB2C21 /* LaunchScreen.storyboard in Resources */,
 				DE958D2922E6E83F00DB2C21 /* Assets.xcassets in Resources */,
 				DE958D2722E6E83B00DB2C21 /* MainViewController.storyboard in Resources */,
+				DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,9 +571,11 @@
 				DE9BEA2B259BBD1E000E94B0 /* UILabelDecorator.swift in Sources */,
 				DE958D5E22F01FCE00DB2C21 /* UICollectionViewExtension.swift in Sources */,
 				DE9BEA41259BBE40000E94B0 /* UIViewControllerExtension.swift in Sources */,
+				DEC2C79025B46A160001BD20 /* CategoryTabCollectionViewCell.swift in Sources */,
 				DE958D5C22F01FBC00DB2C21 /* NSObjectProtocolExtension.swift in Sources */,
 				DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */,
 				DE9BEA46259BBE5D000E94B0 /* UITableViewExtension.swift in Sources */,
+				DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */,
 				DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */,
 				DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */,
 			);

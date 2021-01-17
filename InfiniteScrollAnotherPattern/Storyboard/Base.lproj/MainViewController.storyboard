@@ -32,15 +32,15 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zo-CM-gIW">
-                                <rect key="frame" x="87.5" y="48" width="200" height="4"/>
+                                <rect key="frame" x="87.5" y="10" width="200" height="28"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="ADo-xR-QD1"/>
-                                    <constraint firstAttribute="height" constant="4" id="fNH-0h-uMj"/>
+                                    <constraint firstAttribute="height" constant="28" id="bnL-GC-YEy"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIY-hb-NB5">
-                                <rect key="frame" x="0.0" y="52" width="375" height="615"/>
+                                <rect key="frame" x="0.0" y="48" width="375" height="619"/>
                                 <connections>
                                     <segue destination="EVj-m5-Wn4" kind="embed" id="m9W-xz-9l1"/>
                                 </connections>
@@ -49,14 +49,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4Zo-CM-gIW" firstAttribute="top" secondItem="T6f-Vw-KF7" secondAttribute="bottom" id="5de-VV-ma2"/>
+                            <constraint firstItem="tIY-hb-NB5" firstAttribute="top" secondItem="4Zo-CM-gIW" secondAttribute="bottom" constant="10" id="3pQ-K3-PET"/>
                             <constraint firstItem="T6f-Vw-KF7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Is4-Gu-Efz"/>
+                            <constraint firstItem="4Zo-CM-gIW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="O7C-8p-sQ6"/>
                             <constraint firstItem="tIY-hb-NB5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RFo-Pd-3xD"/>
                             <constraint firstItem="T6f-Vw-KF7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TBp-Ky-2ON"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tIY-hb-NB5" secondAttribute="trailing" id="Ub5-P1-8GH"/>
                             <constraint firstItem="4Zo-CM-gIW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vqy-14-Ksl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tIY-hb-NB5" secondAttribute="bottom" id="Y3T-W1-xWF"/>
-                            <constraint firstItem="tIY-hb-NB5" firstAttribute="top" secondItem="4Zo-CM-gIW" secondAttribute="bottom" id="a2g-bx-rDR"/>
+                            <constraint firstItem="tIY-hb-NB5" firstAttribute="top" secondItem="T6f-Vw-KF7" secondAttribute="bottom" id="YVg-Db-FNJ"/>
                             <constraint firstItem="T6f-Vw-KF7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qcT-z2-uzr"/>
                         </constraints>
                     </view>
@@ -65,6 +66,7 @@
                         <outlet property="categoryContentsContainerView" destination="tIY-hb-NB5" id="iNk-j3-eon"/>
                         <outlet property="categoryTabCollectionView" destination="T6f-Vw-KF7" id="L50-VZ-hJA"/>
                         <outlet property="categoryTabSelectBarView" destination="4Zo-CM-gIW" id="vnh-41-PEu"/>
+                        <outlet property="categoryTabSelectBarViewWidthConstraint" destination="ADo-xR-QD1" id="AFu-RE-cfi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
