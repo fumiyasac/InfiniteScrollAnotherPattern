@@ -6,17 +6,25 @@ PODS:
     - Apollo/Core (= 0.38.3)
   - Apollo/Core (0.38.3)
   - BulletinBoard (5.0.0)
+  - DropDown (2.3.13)
   - GRDB.swift (5.2.0):
     - GRDB.swift/standard (= 5.2.0)
   - GRDB.swift/standard (5.2.0)
   - HorizonCalendar (1.6.5)
+  - KeychainAccess (4.2.1)
+  - SkeletonView (1.11.0)
+  - SwiftyAttributes (5.1.1)
 
 DEPENDENCIES:
   - AlamofireImage
   - Apollo
   - BulletinBoard
+  - DropDown
   - GRDB.swift
   - HorizonCalendar
+  - KeychainAccess
+  - SkeletonView
+  - SwiftyAttributes
 
 SPEC REPOS:
   trunk:
@@ -24,17 +32,25 @@ SPEC REPOS:
     - AlamofireImage
     - Apollo
     - BulletinBoard
+    - DropDown
     - GRDB.swift
     - HorizonCalendar
+    - KeychainAccess
+    - SkeletonView
+    - SwiftyAttributes
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
   Apollo: b5c2427ff42bd23c4db399df1a60c8db34bda53c
   BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   GRDB.swift: f44f61fd032e176e3aadb1f70e15656dc50ca018
   HorizonCalendar: bf90307200232779094ef5b85cb09a30a029c60a
+  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
+  SkeletonView: cc84ce90a804dd0dd7198dd802833411c8a64eaf
+  SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
 
-PODFILE CHECKSUM: 1b317d92a0ad89510f9803a7a949eea0e0818fcd
+PODFILE CHECKSUM: c9a144c6e32b33eb951c6b9258c55e7dd9146a37
 
 COCOAPODS: 1.10.0

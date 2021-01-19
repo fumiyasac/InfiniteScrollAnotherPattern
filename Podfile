@@ -11,6 +11,10 @@ target 'InfiniteScrollAnotherPattern' do
   pod 'BulletinBoard'
   pod 'HorizonCalendar' 
   pod 'GRDB.swift'
+  pod 'SkeletonView'
+  pod 'KeychainAccess'
+  pod 'SwiftyAttributes'
+  pod 'DropDown'
 
   target 'InfiniteScrollAnotherPatternTests' do
     inherit! :search_paths
