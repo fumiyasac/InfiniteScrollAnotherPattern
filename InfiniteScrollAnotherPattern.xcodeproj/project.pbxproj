@@ -215,6 +215,7 @@
 		DE958D5822F01F4800DB2C21 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DEFA61C425BAF66E00FC039C /* Main */,
 				DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */,
 				DE958D2322E6E83B00DB2C21 /* MainViewController.swift */,
 			);
@@ -324,6 +325,21 @@
 				DEC2C7B425B495D50001BD20 /* CategoryScreenLayout.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		DEFA61C425BAF66E00FC039C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DEFA61C625BAF6D500FC039C /* ChildContainer */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DEFA61C625BAF6D500FC039C /* ChildContainer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChildContainer;
 			sourceTree = "<group>";
 		};
 		E3138C5CF5499C99D84C2C3A /* Pods */ = {

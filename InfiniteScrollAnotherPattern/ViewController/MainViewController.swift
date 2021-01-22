@@ -93,7 +93,7 @@ final class MainViewController: UIViewController {
         // MEMO: バー表示をするUIViewの初期設定
 
         categoryTabSelectBarView.backgroundColor = Constants.Color.categoryTabActive
-        categoryTabSelectBarView.layer.cornerRadius = CategoryTabCollectionViewCell.cellHeight / 2
+        categoryTabSelectBarView.layer.cornerRadius = 14.0
         categoryTabSelectBarView.layer.masksToBounds = true
     }
 
@@ -153,11 +153,11 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 extension MainViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        return UICollectionViewCell()
     }
 }
 
