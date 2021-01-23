@@ -15,6 +15,7 @@ target 'InfiniteScrollAnotherPattern' do
   pod 'KeychainAccess'
   pod 'SwiftyAttributes'
   pod 'DropDown'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
 
   target 'InfiniteScrollAnotherPatternTests' do
     inherit! :search_paths
