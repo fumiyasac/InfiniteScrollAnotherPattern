@@ -16,6 +16,7 @@ target 'InfiniteScrollAnotherPattern' do
   pod 'SwiftyAttributes'
   pod 'DropDown'
   pod 'Toast-Swift', '~> 5.0.1'
+  pod 'GrowingTextView', '0.7.2'
 
   target 'InfiniteScrollAnotherPatternTests' do
     inherit! :search_paths
