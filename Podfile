@@ -17,6 +17,7 @@ target 'InfiniteScrollAnotherPattern' do
   pod 'DropDown'
   pod 'Toast-Swift', '~> 5.0.1'
   pod 'GrowingTextView', '0.7.2'
+  pod 'ActiveLabel'
 
   target 'InfiniteScrollAnotherPatternTests' do
     inherit! :search_paths
