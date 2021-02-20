@@ -192,9 +192,9 @@
 		DE958D5622F01F3000DB2C21 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				DE9CFD2025E13ED200BDE010 /* GlobalTabBar */,
+				DE9CFD1E25E13EA000BDE010 /* Main */,
 				DE958D2A22E6E83F00DB2C21 /* LaunchScreen.storyboard */,
-				DEAC320B259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard */,
-				DE958D2522E6E83B00DB2C21 /* MainViewController.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -215,9 +215,8 @@
 		DE958D5822F01F4800DB2C21 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DE9CFD1F25E13EC200BDE010 /* GlobalTabBar */,
 				DEFA61C425BAF66E00FC039C /* Main */,
-				DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */,
-				DE958D2322E6E83B00DB2C21 /* MainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -260,6 +259,38 @@
 			children = (
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DE9CFD1E25E13EA000BDE010 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DE9CFD2425E140A700BDE010 /* ChildContainer */,
+				DE958D2522E6E83B00DB2C21 /* MainViewController.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DE9CFD1F25E13EC200BDE010 /* GlobalTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */,
+			);
+			path = GlobalTabBar;
+			sourceTree = "<group>";
+		};
+		DE9CFD2025E13ED200BDE010 /* GlobalTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				DEAC320B259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard */,
+			);
+			path = GlobalTabBar;
+			sourceTree = "<group>";
+		};
+		DE9CFD2425E140A700BDE010 /* ChildContainer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChildContainer;
 			sourceTree = "<group>";
 		};
 		DEBB023825AE78510080980C /* CategoryTabCollectionViewCell */ = {
@@ -331,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				DEFA61C625BAF6D500FC039C /* ChildContainer */,
+				DE958D2322E6E83B00DB2C21 /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";

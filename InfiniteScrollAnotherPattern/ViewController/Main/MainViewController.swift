@@ -75,9 +75,8 @@ final class MainViewController: UIViewController {
 
     // MARK: - Private Function
 
+    // タブ型表現用UICollectionViewの初期設定
     private func setupCategoryTabCollectionView() {
-
-        // MEMO: タブ型表現用UICollectionViewの初期設定
 
         categoryTabCollectionView.delegate = self
         categoryTabCollectionView.dataSource = self
@@ -88,18 +87,16 @@ final class MainViewController: UIViewController {
         categoryTabCollectionView.showsVerticalScrollIndicator = false
     }
 
+    // バー表示をするUIViewの初期設定
     private func setupCategoryTabSelectBarView() {
-
-        // MEMO: バー表示をするUIViewの初期設定
 
         categoryTabSelectBarView.backgroundColor = Constants.Color.categoryTabActive
         categoryTabSelectBarView.layer.cornerRadius = 14.0
         categoryTabSelectBarView.layer.masksToBounds = true
     }
 
+    // StoryboardでContainerViewを経由してUIPageViewControllerを配置している点に注意する
     private func setupCategoryContentsPageViewController() {
-
-        // MEMO: StoryboardでContainerViewを経由してUIPageViewControllerを配置している点に注意する
 
         // ContainerViewにEmbedしたUIPageViewControllerを取得する
         self.children.forEach { childViewController in
@@ -115,6 +112,31 @@ final class MainViewController: UIViewController {
                 return
             }
             scrollView.delegate = self
+        }
+    }
+
+    // FIXME: 後程UIPageViewControllerDataSourceへ移行
+    // 前後のViewControllerを読み込む
+    private func setNextViewController(_ viewController: UIViewController, isAfter: Bool) -> UIViewController? {
+
+        // MEMO: 現在表示中のインデックス値を取得する
+        guard let currentIndex = targetViewControllerLists.firstIndex(of: viewController) else {
+            return nil
+        }
+
+        // MEMO: 第2引数の設定に合わせて現在のインデックス値に+1または-1をするかを決定する（※表示する画面を決定するためのもの）
+        let newIndex = isAfter ? (currentIndex + 1) : (currentIndex - 1)
+
+        // MEMO: 新たに算出したインデックス値に対応するUIPageViewControllerに表示する画面を決定する
+        switch newIndex {
+        case newIndex where (newIndex < 0):
+            return targetViewControllerLists.last
+        case newIndex where (newIndex == targetViewControllerLists.count - 1):
+            return targetViewControllerLists.first
+        case newIndex where (newIndex > 0 && newIndex < targetViewControllerLists.count - 1):
+            return targetViewControllerLists[newIndex]
+        default:
+            return nil
         }
     }
 }
