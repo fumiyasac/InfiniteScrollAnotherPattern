@@ -301,9 +301,9 @@
 		DE9CFD2425E140A700BDE010 /* ChildContainer */ = {
 			isa = PBXGroup;
 			children = (
-				DE9CFD3725E2A11500BDE010 /* ArticleListViewController.swift */,
-				DE9CFD3F25E2A15F00BDE010 /* GridListViewController.swift */,
-				DE9CFD4425E2A18F00BDE010 /* ToggleListViewController.swift */,
+				DE9CFD2525E2A03A00BDE010 /* ArticleListViewController.storyboard */,
+				DE9CFD2D25E2A06400BDE010 /* GridListViewController.storyboard */,
+				DE9CFD3225E2A07500BDE010 /* ToggleListViewController.storyboard */,
 			);
 			path = ChildContainer;
 			sourceTree = "<group>";
@@ -385,9 +385,9 @@
 		DEFA61C625BAF6D500FC039C /* ChildContainer */ = {
 			isa = PBXGroup;
 			children = (
-				DE9CFD2525E2A03A00BDE010 /* ArticleListViewController.storyboard */,
-				DE9CFD2D25E2A06400BDE010 /* GridListViewController.storyboard */,
-				DE9CFD3225E2A07500BDE010 /* ToggleListViewController.storyboard */,
+				DE9CFD3725E2A11500BDE010 /* ArticleListViewController.swift */,
+				DE9CFD3F25E2A15F00BDE010 /* GridListViewController.swift */,
+				DE9CFD4425E2A18F00BDE010 /* ToggleListViewController.swift */,
 			);
 			path = ChildContainer;
 			sourceTree = "<group>";
