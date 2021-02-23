@@ -165,17 +165,13 @@
 				DE958D2A22E6E83F00DB2C21 /* LaunchScreen.storyboard */,
 				DE958D2822E6E83F00DB2C21 /* Assets.xcassets */,
 				DE9CFD7B25E4CA4500BDE010 /* Colors.xcassets */,
+				DE9CFDBC25E4E5B600BDE010 /* Architecture */,
 				DE958D5522F01F0E00DB2C21 /* Classes */,
 				DEC2C79925B473620001BD20 /* Constants */,
-				DE9BEA4B259BBE7C000E94B0 /* Contract */,
-				DEBB023B25AE7DF50080980C /* Repository */,
 				DEC2C7B325B4936A0001BD20 /* Enum */,
 				DE958D5722F01F3800DB2C21 /* Extension */,
+				DE9CFDC025E4E72900BDE010 /* Interfaces */,
 				DE9BEA29259BBCF9000E94B0 /* Modules */,
-				DE9BEA4C259BBE83000E94B0 /* Presenter */,
-				DE958D5622F01F3000DB2C21 /* Storyboard */,
-				DE958D5922F01F5300DB2C21 /* View */,
-				DE958D5822F01F4800DB2C21 /* ViewController */,
 			);
 			path = InfiniteScrollAnotherPattern;
 			sourceTree = "<group>";
@@ -301,6 +297,66 @@
 				DE9CFD7125E4C59100BDE010 /* SampleViewController.storyboard */,
 			);
 			path = ChildContainer;
+			sourceTree = "<group>";
+		};
+		DE9CFDBA25E4E58700BDE010 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DE9BEA4B259BBE7C000E94B0 /* Contract */,
+				DE9BEA4C259BBE83000E94B0 /* Presenter */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DE9CFDBB25E4E5A000BDE010 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				DE9CFDBE25E4E5D900BDE010 /* Entity */,
+				DEBB023B25AE7DF50080980C /* Repository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		DE9CFDBC25E4E5B600BDE010 /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				DE9CFDBD25E4E5C900BDE010 /* Infrastructure */,
+				DE9CFDBB25E4E5A000BDE010 /* Domain */,
+				DE9CFDBA25E4E58700BDE010 /* Presentation */,
+			);
+			path = Architecture;
+			sourceTree = "<group>";
+		};
+		DE9CFDBD25E4E5C900BDE010 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		DE9CFDBE25E4E5D900BDE010 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		DE9CFDBF25E4E70D00BDE010 /* ViewObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewObject;
+			sourceTree = "<group>";
+		};
+		DE9CFDC025E4E72900BDE010 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				DE958D5622F01F3000DB2C21 /* Storyboard */,
+				DE958D5922F01F5300DB2C21 /* View */,
+				DE9CFDBF25E4E70D00BDE010 /* ViewObject */,
+				DE958D5822F01F4800DB2C21 /* ViewController */,
+			);
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		DEBB023825AE78510080980C /* CategoryTabCollectionViewCell */ = {
