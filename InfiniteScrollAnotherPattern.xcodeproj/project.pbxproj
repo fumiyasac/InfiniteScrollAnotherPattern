@@ -29,14 +29,15 @@
 		DE9CFD3825E2A11500BDE010 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFD3725E2A11500BDE010 /* ArticleListViewController.swift */; };
 		DE9CFD4025E2A15F00BDE010 /* GridListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFD3F25E2A15F00BDE010 /* GridListViewController.swift */; };
 		DE9CFD4525E2A18F00BDE010 /* ToggleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFD4425E2A18F00BDE010 /* ToggleListViewController.swift */; };
+		DE9CFD7225E4C59100BDE010 /* SampleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9CFD7125E4C59100BDE010 /* SampleViewController.storyboard */; };
+		DE9CFD7725E4C5CB00BDE010 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFD7625E4C5CB00BDE010 /* SampleViewController.swift */; };
+		DE9CFD7C25E4CA4500BDE010 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE9CFD7B25E4CA4500BDE010 /* Colors.xcassets */; };
 		DEAC31FC259DD93200B72134 /* GlobalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */; };
 		DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */; };
 		DEAC320D259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEAC320B259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard */; };
 		DEC2C79025B46A160001BD20 /* CategoryTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */; };
 		DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */; };
 		DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C79D25B4772D0001BD20 /* AppConstants.swift */; };
-		DEC2C7A325B48C700001BD20 /* CategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C7A225B48C700001BD20 /* CategoryEntity.swift */; };
-		DEC2C7AC25B491910001BD20 /* CategoryEntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C7AB25B491910001BD20 /* CategoryEntityFactory.swift */; };
 		DEC2C7B525B495D50001BD20 /* CategoryScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C7B425B495D50001BD20 /* CategoryScreenLayout.swift */; };
 		F214B7164AFBC4B3908569D3 /* Pods_InfiniteScrollAnotherPattern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DA912FD8BFE6BEB104AFC1 /* Pods_InfiniteScrollAnotherPattern.framework */; };
 /* End PBXBuildFile section */
@@ -92,14 +93,15 @@
 		DE9CFD3725E2A11500BDE010 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		DE9CFD3F25E2A15F00BDE010 /* GridListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridListViewController.swift; sourceTree = "<group>"; };
 		DE9CFD4425E2A18F00BDE010 /* ToggleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleListViewController.swift; sourceTree = "<group>"; };
+		DE9CFD7125E4C59100BDE010 /* SampleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleViewController.storyboard; sourceTree = "<group>"; };
+		DE9CFD7625E4C5CB00BDE010 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		DE9CFD7B25E4CA4500BDE010 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTabBarController.swift; sourceTree = "<group>"; };
 		DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
 		DEAC320C259DDAAB00B72134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GlobalTabBarControllerstoryboard.storyboard; sourceTree = "<group>"; };
 		DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTabCollectionViewCell.xib; sourceTree = "<group>"; };
 		DEC2C79D25B4772D0001BD20 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		DEC2C7A225B48C700001BD20 /* CategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntity.swift; sourceTree = "<group>"; };
-		DEC2C7AB25B491910001BD20 /* CategoryEntityFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntityFactory.swift; sourceTree = "<group>"; };
 		DEC2C7B425B495D50001BD20 /* CategoryScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenLayout.swift; sourceTree = "<group>"; };
 		E4DA912FD8BFE6BEB104AFC1 /* Pods_InfiniteScrollAnotherPattern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InfiniteScrollAnotherPattern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB15C7915712D40C10B15AB /* Pods-InfiniteScrollAnotherPatternTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfiniteScrollAnotherPatternTests.debug.xcconfig"; path = "Target Support Files/Pods-InfiniteScrollAnotherPatternTests/Pods-InfiniteScrollAnotherPatternTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,14 +164,15 @@
 				DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */,
 				DE958D2A22E6E83F00DB2C21 /* LaunchScreen.storyboard */,
 				DE958D2822E6E83F00DB2C21 /* Assets.xcassets */,
+				DE9CFD7B25E4CA4500BDE010 /* Colors.xcassets */,
 				DE958D5522F01F0E00DB2C21 /* Classes */,
 				DEC2C79925B473620001BD20 /* Constants */,
+				DE9BEA4B259BBE7C000E94B0 /* Contract */,
+				DEBB023B25AE7DF50080980C /* Repository */,
 				DEC2C7B325B4936A0001BD20 /* Enum */,
-				DEBB023925AE7DE40080980C /* Domain */,
 				DE958D5722F01F3800DB2C21 /* Extension */,
-				DEBB023A25AE7DEA0080980C /* Infrastructure */,
 				DE9BEA29259BBCF9000E94B0 /* Modules */,
-				DE9BEA4A259BBE6E000E94B0 /* Presentation */,
+				DE9BEA4C259BBE83000E94B0 /* Presenter */,
 				DE958D5622F01F3000DB2C21 /* Storyboard */,
 				DE958D5922F01F5300DB2C21 /* View */,
 				DE958D5822F01F4800DB2C21 /* ViewController */,
@@ -250,15 +253,6 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		DE9BEA4A259BBE6E000E94B0 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				DE9BEA4B259BBE7C000E94B0 /* Contract */,
-				DE9BEA4C259BBE83000E94B0 /* Presenter */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
 		DE9BEA4B259BBE7C000E94B0 /* Contract */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +298,7 @@
 				DE9CFD2525E2A03A00BDE010 /* ArticleListViewController.storyboard */,
 				DE9CFD2D25E2A06400BDE010 /* GridListViewController.storyboard */,
 				DE9CFD3225E2A07500BDE010 /* ToggleListViewController.storyboard */,
+				DE9CFD7125E4C59100BDE010 /* SampleViewController.storyboard */,
 			);
 			path = ChildContainer;
 			sourceTree = "<group>";
@@ -317,36 +312,11 @@
 			path = CategoryTabCollectionViewCell;
 			sourceTree = "<group>";
 		};
-		DEBB023925AE7DE40080980C /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				DEC2C7AA25B491710001BD20 /* Factory */,
-				DEC2C79525B472F70001BD20 /* Entity */,
-				DEBB023B25AE7DF50080980C /* Repository */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		DEBB023A25AE7DEA0080980C /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Infrastructure;
-			sourceTree = "<group>";
-		};
 		DEBB023B25AE7DF50080980C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		DEC2C79525B472F70001BD20 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				DEC2C7A225B48C700001BD20 /* CategoryEntity.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		DEC2C79925B473620001BD20 /* Constants */ = {
@@ -355,14 +325,6 @@
 				DEC2C79D25B4772D0001BD20 /* AppConstants.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		DEC2C7AA25B491710001BD20 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				DEC2C7AB25B491910001BD20 /* CategoryEntityFactory.swift */,
-			);
-			path = Factory;
 			sourceTree = "<group>";
 		};
 		DEC2C7B325B4936A0001BD20 /* Enum */ = {
@@ -388,6 +350,7 @@
 				DE9CFD3725E2A11500BDE010 /* ArticleListViewController.swift */,
 				DE9CFD3F25E2A15F00BDE010 /* GridListViewController.swift */,
 				DE9CFD4425E2A18F00BDE010 /* ToggleListViewController.swift */,
+				DE9CFD7625E4C5CB00BDE010 /* SampleViewController.swift */,
 			);
 			path = ChildContainer;
 			sourceTree = "<group>";
@@ -529,9 +492,11 @@
 				DEAC320D259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard in Resources */,
 				DE958D2C22E6E83F00DB2C21 /* LaunchScreen.storyboard in Resources */,
 				DE958D2922E6E83F00DB2C21 /* Assets.xcassets in Resources */,
+				DE9CFD7C25E4CA4500BDE010 /* Colors.xcassets in Resources */,
 				DE958D2722E6E83B00DB2C21 /* MainViewController.storyboard in Resources */,
 				DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */,
 				DE9CFD3325E2A07500BDE010 /* ToggleListViewController.storyboard in Resources */,
+				DE9CFD7225E4C59100BDE010 /* SampleViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,13 +627,12 @@
 				DE958D6022F0204E00DB2C21 /* CustomViewBase.swift in Sources */,
 				DEC2C7B525B495D50001BD20 /* CategoryScreenLayout.swift in Sources */,
 				DE9CFD4025E2A15F00BDE010 /* GridListViewController.swift in Sources */,
-				DEC2C7AC25B491910001BD20 /* CategoryEntityFactory.swift in Sources */,
 				DE9CFD3825E2A11500BDE010 /* ArticleListViewController.swift in Sources */,
 				DE9BEA3C259BBDFF000E94B0 /* UIColorExtension.swift in Sources */,
 				DE9CFD4525E2A18F00BDE010 /* ToggleListViewController.swift in Sources */,
-				DEC2C7A325B48C700001BD20 /* CategoryEntity.swift in Sources */,
 				DEAC31FC259DD93200B72134 /* GlobalTabBarController.swift in Sources */,
 				DE9BEA2B259BBD1E000E94B0 /* UILabelDecorator.swift in Sources */,
+				DE9CFD7725E4C5CB00BDE010 /* SampleViewController.swift in Sources */,
 				DE958D5E22F01FCE00DB2C21 /* UICollectionViewExtension.swift in Sources */,
 				DE9BEA41259BBE40000E94B0 /* UIViewControllerExtension.swift in Sources */,
 				DEC2C79025B46A160001BD20 /* CategoryTabCollectionViewCell.swift in Sources */,

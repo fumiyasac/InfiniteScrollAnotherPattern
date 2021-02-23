@@ -38,6 +38,9 @@ final class MainViewController: UIViewController {
     // 現在表示しているViewControllerのタグ番号
     private var selectedPageViewControllerIndex: Int = 0
 
+    // 無限スクロールタブ部分に表示するカテゴリーデータを保持する配列
+    private var categoryLists: [String] = []
+
     // ページングして表示させるViewControllerを保持する配列
     private var targetViewControllerLists: [UIViewController] = []
 
@@ -64,6 +67,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupCategoryTab()
         setupCategoryTabCollectionView()
         setupCategoryTabSelectBarView()
         setupCategoryContentsPageViewController()
@@ -74,6 +78,11 @@ final class MainViewController: UIViewController {
     }
 
     // MARK: - Private Function
+
+    // タブに表示したいカテゴリー名を取得してセットする
+    private func setupCategoryTab() {
+        
+    }
 
     // タブ型表現用UICollectionViewの初期設定
     private func setupCategoryTabCollectionView() {
@@ -95,10 +104,18 @@ final class MainViewController: UIViewController {
         categoryTabSelectBarView.layer.masksToBounds = true
     }
 
-    // StoryboardでContainerViewを経由してUIPageViewControllerを配置している点に注意する
+    // タブに表示するカテゴリー名に対応する画面を構築する
     private func setupCategoryContentsPageViewController() {
 
+        // MEMO: 現時点ではダミー表示用のViewControllerをセットしている
+        (0...8).forEach { index in
+            // MEMO: タブ型UI部分に配置したいViewControllerの一覧をインスタンスにして格納配列に配置する
+            let targetViewController = SampleViewController.instantiate()
+            targetViewControllerLists.append(targetViewController)
+        }
+
         // ContainerViewにEmbedしたUIPageViewControllerを取得する
+        // MEMO: StoryboardでContainerViewを経由してUIPageViewControllerを配置している点に注意する
         self.children.forEach { childViewController in
             guard let targetViewController = childViewController as? UIPageViewController else {
                 return
@@ -115,7 +132,6 @@ final class MainViewController: UIViewController {
         }
     }
 
-    // FIXME: 後程UIPageViewControllerDataSourceへ移行
     // 前後のViewControllerを読み込む
     private func setNextViewController(_ viewController: UIViewController, isAfter: Bool) -> UIViewController? {
 
@@ -187,4 +203,11 @@ extension MainViewController: UICollectionViewDataSource {
 
 extension MainViewController: UIScrollViewDelegate {
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+    }
 }
