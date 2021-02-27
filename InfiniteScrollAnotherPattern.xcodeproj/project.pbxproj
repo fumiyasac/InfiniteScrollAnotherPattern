@@ -32,6 +32,7 @@
 		DE9CFD7225E4C59100BDE010 /* SampleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9CFD7125E4C59100BDE010 /* SampleViewController.storyboard */; };
 		DE9CFD7725E4C5CB00BDE010 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFD7625E4C5CB00BDE010 /* SampleViewController.swift */; };
 		DE9CFD7C25E4CA4500BDE010 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE9CFD7B25E4CA4500BDE010 /* Colors.xcassets */; };
+		DE9CFDC225E4E82600BDE010 /* CategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFDC125E4E82600BDE010 /* CategoryTab.swift */; };
 		DEAC31FC259DD93200B72134 /* GlobalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */; };
 		DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */; };
 		DEAC320D259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEAC320B259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard */; };
@@ -96,6 +97,7 @@
 		DE9CFD7125E4C59100BDE010 /* SampleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleViewController.storyboard; sourceTree = "<group>"; };
 		DE9CFD7625E4C5CB00BDE010 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		DE9CFD7B25E4CA4500BDE010 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		DE9CFDC125E4E82600BDE010 /* CategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTab.swift; sourceTree = "<group>"; };
 		DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTabBarController.swift; sourceTree = "<group>"; };
 		DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
 		DEAC320C259DDAAB00B72134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GlobalTabBarControllerstoryboard.storyboard; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		DE9CFDBF25E4E70D00BDE010 /* ViewObject */ = {
 			isa = PBXGroup;
 			children = (
+				DE9CFDC125E4E82600BDE010 /* CategoryTab.swift */,
 			);
 			path = ViewObject;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				DE9BEA3C259BBDFF000E94B0 /* UIColorExtension.swift in Sources */,
 				DE9CFD4525E2A18F00BDE010 /* ToggleListViewController.swift in Sources */,
 				DEAC31FC259DD93200B72134 /* GlobalTabBarController.swift in Sources */,
+				DE9CFDC225E4E82600BDE010 /* CategoryTab.swift in Sources */,
 				DE9BEA2B259BBD1E000E94B0 /* UILabelDecorator.swift in Sources */,
 				DE9CFD7725E4C5CB00BDE010 /* SampleViewController.swift in Sources */,
 				DE958D5E22F01FCE00DB2C21 /* UICollectionViewExtension.swift in Sources */,

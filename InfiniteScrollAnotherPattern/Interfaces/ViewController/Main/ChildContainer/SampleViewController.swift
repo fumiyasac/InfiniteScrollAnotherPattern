@@ -10,10 +10,26 @@ import UIKit
 
 final class SampleViewController: UIViewController {
 
+    // MARK: - Properties
+
+    private var index: Int!
+
+    // MARK: - @IBOutlet
+
+    @IBOutlet private weak var indexLabel: UILabel!
+
     // MARK: - Override
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        indexLabel.text = "Index: " + index.description
+    }
+
+    // MARK: - Function
+
+    func setIndex(_ index: Int) {
+        self.index = index
     }
 }
 

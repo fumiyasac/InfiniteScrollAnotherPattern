@@ -23,16 +23,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Index: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONP-S3-VLb">
+                                <rect key="frame" x="16" y="358.5" width="343" height="14.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CmH-SA-bKA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CmH-SA-bKA" firstAttribute="trailing" secondItem="Rhp-aC-82w" secondAttribute="trailing" constant="16" id="207-RZ-Fpk"/>
                             <constraint firstItem="Rhp-aC-82w" firstAttribute="centerX" secondItem="4jg-MX-pZx" secondAttribute="centerX" id="Om2-rW-hMZ"/>
+                            <constraint firstItem="CmH-SA-bKA" firstAttribute="trailing" secondItem="ONP-S3-VLb" secondAttribute="trailing" constant="16" id="RZI-wD-nM3"/>
+                            <constraint firstItem="ONP-S3-VLb" firstAttribute="leading" secondItem="CmH-SA-bKA" secondAttribute="leading" constant="16" id="gLZ-uk-idI"/>
                             <constraint firstItem="Rhp-aC-82w" firstAttribute="leading" secondItem="CmH-SA-bKA" secondAttribute="leading" constant="16" id="iEz-UH-Jm7"/>
+                            <constraint firstItem="ONP-S3-VLb" firstAttribute="top" secondItem="Rhp-aC-82w" secondAttribute="bottom" constant="16" id="okx-2Z-kXJ"/>
                             <constraint firstItem="Rhp-aC-82w" firstAttribute="centerY" secondItem="4jg-MX-pZx" secondAttribute="centerY" id="pab-oX-N7N"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="indexLabel" destination="ONP-S3-VLb" id="fOA-OX-Eid"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QkE-Ue-uEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

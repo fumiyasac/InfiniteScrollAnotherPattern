@@ -22,8 +22,9 @@ final class CategoryTabCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Function
 
-    func setCategoryTitle(titleName: String) {
-        categoryTitleLabel.text = titleName
+    func setCell(_ categoryTab: CategoryTab) {
+        categoryTitleLabel.text = categoryTab.title
+        setColor(shouldActive: false)
     }
 
     func setColor(shouldActive: Bool) {
