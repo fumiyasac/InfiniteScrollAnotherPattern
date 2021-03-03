@@ -52,7 +52,7 @@ final class MainViewController: UIViewController {
     private var pageViewController: UIPageViewController!
 
     // 現在のセル番号
-    private var selectedCollectionViewIndex: Int!
+    private var selectedCollectionViewIndex: Int?
 
     // コンテンツ配置用PageViewControllerにおけるX軸方向のScroll開始位置
     private var startPageViewControllerPosX: CGFloat = 0
@@ -82,7 +82,12 @@ final class MainViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("viewDidAppear")
+
+        //
+        selectedCollectionViewIndex = categoryTabLists.count
+
+        let initialIndexPath = IndexPath(row: categoryTabLists.count, section: 0)
+        decideCategoryTabPositionAndDisplayPageViewController(at: initialIndexPath)
     }
 
     // MARK: - Private Function (Initialize about UserInterface)
@@ -114,13 +119,16 @@ final class MainViewController: UIViewController {
         categoryTabCollectionView.delaysContentTouches = false
         categoryTabCollectionView.showsHorizontalScrollIndicator = false
         categoryTabCollectionView.showsVerticalScrollIndicator = false
+
+        //
+        categoryTabCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
     }
 
     // バー表示をするUIViewの初期設定
     private func setupCategoryTabSelectBarView() {
 
         categoryTabSelectBarView.backgroundColor = Constants.Color.categoryTabActive
-        categoryTabSelectBarView.layer.cornerRadius = 14.0
+        categoryTabSelectBarView.layer.cornerRadius = 12.0
         categoryTabSelectBarView.layer.masksToBounds = true
     }
 
@@ -166,6 +174,7 @@ final class MainViewController: UIViewController {
 
     // MARK: - Private Function (Change State Function about UserInterface)
 
+    //
     private func decideCategoryTabPositionAndDisplayPageViewController(at indexPath: IndexPath) {
         
         //
@@ -185,6 +194,45 @@ final class MainViewController: UIViewController {
 
             //
             categoryTabCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
+
+            //
+            DispatchQueue.main.async {
+                self.changeCategoryTabDesign(at: indexPath)
+            }
+        }
+    }
+
+    //
+    private func changeCategoryTabDesign(at indexPath: IndexPath) {
+        
+        //
+        for visibleCell in categoryTabCollectionView.visibleCells {
+            if let visibleCell = visibleCell as? CategoryTabCollectionViewCell {
+                visibleCell.setColor(shouldActive: false)
+            }
+        }
+
+        //
+        if let targetCell = categoryTabCollectionView.cellForItem(at: indexPath) as? CategoryTabCollectionViewCell {
+
+            //
+            selectedCollectionViewIndex = indexPath.row
+
+            //
+            targetCell.setColor(shouldActive: true)
+
+            //
+            let additionnalWidth: CGFloat = 16.0
+            let targetCellCharacterWidth = targetCell.getCharacterWidthWithinCell()
+            categoryTabSelectBarViewWidthConstraint.constant = targetCellCharacterWidth + additionnalWidth
+            UIView.animate(withDuration: 0.18, animations: {
+                self.categoryTabSelectBarView.setNeedsLayout()
+                self.categoryTabSelectBarView.layoutIfNeeded()
+            })
+
+        //
+        } else {
+            selectedCollectionViewIndex = nil
         }
     }
 }
@@ -310,17 +358,59 @@ extension MainViewController: UIPageViewControllerDataSource {
 extension MainViewController: UIScrollViewDelegate {
 
     //
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-    }
-
-    //
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 
         //
-        startCollectionViewPosX = scrollView.contentOffset.x
-        
-        // 
+        startPageViewControllerPosX = scrollView.contentOffset.x
+
+        //
+        let categoryTabContentWidth = categoryTabCollectionView.contentSize.width / CGFloat(cellCopyCount)
+        let categoryTabContentOffsetX = categoryTabContentWidth * 2 + (CategoryTabCollectionViewCell.cellWidth * CGFloat(selectedPageViewControllerIndex))
+        let categoryTabContentCenterMargin = (UIScreen.main.bounds.size.width - CategoryTabCollectionViewCell.cellWidth) / 2
+
+        //
+        startCollectionViewPosX = categoryTabContentOffsetX - categoryTabContentCenterMargin
+    }
+
+    //
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        //
+        let isCategoryTabCollectionViewScroll: Bool = (scrollView == categoryTabCollectionView)
+
+        //
+        if isCategoryTabCollectionViewScroll {
+
+            let categoryTabContentWidth = categoryTabCollectionView.contentSize.width / CGFloat(cellCopyCount)
+            //
+            if categoryTabCollectionView.contentOffset.x <= CategoryTabCollectionViewCell.cellWidth {
+                categoryTabCollectionView.contentOffset.x = (categoryTabContentWidth * 2) + CategoryTabCollectionViewCell.cellWidth
+            //
+            } else if (categoryTabCollectionView.contentOffset.x) >= (categoryTabContentWidth * 3) + CategoryTabCollectionViewCell.cellWidth {
+                categoryTabCollectionView.contentOffset.x = categoryTabContentWidth + CategoryTabCollectionViewCell.cellWidth
+            }
+
+        //
+        } else {
+
+            //
+            let changedPageViewControllerPosX = startPageViewControllerPosX - scrollView.contentOffset.x
+            let changedCollectionViewPosX = CategoryTabCollectionViewCell.cellWidth * (changedPageViewControllerPosX / UIScreen.main.bounds.size.width)
+
+            //
+            if changedCollectionViewPosX != 0 {
+                categoryTabCollectionView.contentOffset.x = startCollectionViewPosX - changedCollectionViewPosX
+            }
+        }
+
+        //
+        let collectionViewCenter = self.view.convert(categoryTabCollectionView.center, to: categoryTabCollectionView)
+        guard let targetIndexPath = categoryTabCollectionView.indexPathForItem(at: collectionViewCenter) else {
+            return
+        }
+        if targetIndexPath.row != selectedCollectionViewIndex {
+            changeCategoryTabDesign(at: targetIndexPath)
+        }
     }
 
     //

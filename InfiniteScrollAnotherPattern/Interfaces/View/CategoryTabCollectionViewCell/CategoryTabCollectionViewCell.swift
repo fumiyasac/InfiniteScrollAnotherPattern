@@ -22,12 +22,25 @@ final class CategoryTabCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Function
 
+    //
     func setCell(_ categoryTab: CategoryTab) {
         categoryTitleLabel.text = categoryTab.title
         setColor(shouldActive: false)
     }
 
+    //
     func setColor(shouldActive: Bool) {
-        categoryTitleLabel.tintColor = shouldActive ? Constants.Color.categoryTabActive : Constants.Color.categoryTabDeactive
+        categoryTitleLabel.textColor = shouldActive ? UIColor(code: "#dddddd") : UIColor(code: "#aaaaaa")
+    }
+
+    //
+    func getCharacterWidthWithinCell() -> CGFloat {
+        let targetText = categoryTitleLabel.text
+        let targetAttributes = [NSAttributedString.Key.font: UIFont(name: "HiraginoSans-W6", size: 12.0)!]
+        if let characterSize = targetText?.size(withAttributes: targetAttributes) {
+            return characterSize.width
+        } else {
+            return CGFloat.zero
+        }
     }
 }
