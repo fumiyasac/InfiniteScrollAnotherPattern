@@ -19,7 +19,6 @@
 		DE958D5C22F01FBC00DB2C21 /* NSObjectProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5B22F01FBC00DB2C21 /* NSObjectProtocolExtension.swift */; };
 		DE958D5E22F01FCE00DB2C21 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5D22F01FCE00DB2C21 /* UICollectionViewExtension.swift */; };
 		DE958D6022F0204E00DB2C21 /* CustomViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D5F22F0204E00DB2C21 /* CustomViewBase.swift */; };
-		DE9BEA2B259BBD1E000E94B0 /* UILabelDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9BEA2A259BBD1E000E94B0 /* UILabelDecorator.swift */; };
 		DE9BEA3C259BBDFF000E94B0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9BEA3B259BBDFF000E94B0 /* UIColorExtension.swift */; };
 		DE9BEA41259BBE40000E94B0 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9BEA40259BBE40000E94B0 /* UIViewControllerExtension.swift */; };
 		DE9BEA46259BBE5D000E94B0 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9BEA45259BBE5D000E94B0 /* UITableViewExtension.swift */; };
@@ -33,9 +32,7 @@
 		DE9CFD7725E4C5CB00BDE010 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFD7625E4C5CB00BDE010 /* SampleViewController.swift */; };
 		DE9CFD7C25E4CA4500BDE010 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE9CFD7B25E4CA4500BDE010 /* Colors.xcassets */; };
 		DE9CFDC225E4E82600BDE010 /* CategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFDC125E4E82600BDE010 /* CategoryTab.swift */; };
-		DEAC31FC259DD93200B72134 /* GlobalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */; };
 		DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */; };
-		DEAC320D259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEAC320B259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard */; };
 		DEC2C79025B46A160001BD20 /* CategoryTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */; };
 		DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */; };
 		DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C79D25B4772D0001BD20 /* AppConstants.swift */; };
@@ -84,7 +81,6 @@
 		DE958D5B22F01FBC00DB2C21 /* NSObjectProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocolExtension.swift; sourceTree = "<group>"; };
 		DE958D5D22F01FCE00DB2C21 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		DE958D5F22F0204E00DB2C21 /* CustomViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewBase.swift; sourceTree = "<group>"; };
-		DE9BEA2A259BBD1E000E94B0 /* UILabelDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelDecorator.swift; sourceTree = "<group>"; };
 		DE9BEA3B259BBDFF000E94B0 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DE9BEA40259BBE40000E94B0 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		DE9BEA45259BBE5D000E94B0 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
@@ -98,9 +94,7 @@
 		DE9CFD7625E4C5CB00BDE010 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		DE9CFD7B25E4CA4500BDE010 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		DE9CFDC125E4E82600BDE010 /* CategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTab.swift; sourceTree = "<group>"; };
-		DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTabBarController.swift; sourceTree = "<group>"; };
 		DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
-		DEAC320C259DDAAB00B72134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GlobalTabBarControllerstoryboard.storyboard; sourceTree = "<group>"; };
 		DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTabCollectionViewCell.xib; sourceTree = "<group>"; };
 		DEC2C79D25B4772D0001BD20 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -173,7 +167,6 @@
 				DEC2C7B325B4936A0001BD20 /* Enum */,
 				DE958D5722F01F3800DB2C21 /* Extension */,
 				DE9CFDC025E4E72900BDE010 /* Interfaces */,
-				DE9BEA29259BBCF9000E94B0 /* Modules */,
 			);
 			path = InfiniteScrollAnotherPattern;
 			sourceTree = "<group>";
@@ -206,7 +199,6 @@
 		DE958D5622F01F3000DB2C21 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				DE9CFD2025E13ED200BDE010 /* GlobalTabBar */,
 				DE9CFD1E25E13EA000BDE010 /* Main */,
 			);
 			path = Storyboard;
@@ -228,7 +220,6 @@
 		DE958D5822F01F4800DB2C21 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DE9CFD1F25E13EC200BDE010 /* GlobalTabBar */,
 				DEFA61C425BAF66E00FC039C /* Main */,
 			);
 			path = ViewController;
@@ -241,14 +232,6 @@
 				DEBB023825AE78510080980C /* CategoryTabCollectionViewCell */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		DE9BEA29259BBCF9000E94B0 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				DE9BEA2A259BBD1E000E94B0 /* UILabelDecorator.swift */,
-			);
-			path = Modules;
 			sourceTree = "<group>";
 		};
 		DE9BEA4B259BBE7C000E94B0 /* Contract */ = {
@@ -272,22 +255,6 @@
 				DE958D2522E6E83B00DB2C21 /* MainViewController.storyboard */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		DE9CFD1F25E13EC200BDE010 /* GlobalTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				DEAC31FB259DD93200B72134 /* GlobalTabBarController.swift */,
-			);
-			path = GlobalTabBar;
-			sourceTree = "<group>";
-		};
-		DE9CFD2025E13ED200BDE010 /* GlobalTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				DEAC320B259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard */,
-			);
-			path = GlobalTabBar;
 			sourceTree = "<group>";
 		};
 		DE9CFD2425E140A700BDE010 /* ChildContainer */ = {
@@ -322,18 +289,10 @@
 		DE9CFDBC25E4E5B600BDE010 /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
-				DE9CFDBD25E4E5C900BDE010 /* Infrastructure */,
 				DE9CFDBB25E4E5A000BDE010 /* Domain */,
 				DE9CFDBA25E4E58700BDE010 /* Presentation */,
 			);
 			path = Architecture;
-			sourceTree = "<group>";
-		};
-		DE9CFDBD25E4E5C900BDE010 /* Infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		DE9CFDBE25E4E5D900BDE010 /* Entity */ = {
@@ -548,7 +507,6 @@
 			files = (
 				DE9CFD2625E2A03A00BDE010 /* ArticleListViewController.storyboard in Resources */,
 				DE9CFD2E25E2A06400BDE010 /* GridListViewController.storyboard in Resources */,
-				DEAC320D259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard in Resources */,
 				DE958D2C22E6E83F00DB2C21 /* LaunchScreen.storyboard in Resources */,
 				DE958D2922E6E83F00DB2C21 /* Assets.xcassets in Resources */,
 				DE9CFD7C25E4CA4500BDE010 /* Colors.xcassets in Resources */,
@@ -689,9 +647,7 @@
 				DE9CFD3825E2A11500BDE010 /* ArticleListViewController.swift in Sources */,
 				DE9BEA3C259BBDFF000E94B0 /* UIColorExtension.swift in Sources */,
 				DE9CFD4525E2A18F00BDE010 /* ToggleListViewController.swift in Sources */,
-				DEAC31FC259DD93200B72134 /* GlobalTabBarController.swift in Sources */,
 				DE9CFDC225E4E82600BDE010 /* CategoryTab.swift in Sources */,
-				DE9BEA2B259BBD1E000E94B0 /* UILabelDecorator.swift in Sources */,
 				DE9CFD7725E4C5CB00BDE010 /* SampleViewController.swift in Sources */,
 				DE958D5E22F01FCE00DB2C21 /* UICollectionViewExtension.swift in Sources */,
 				DE9BEA41259BBE40000E94B0 /* UIViewControllerExtension.swift in Sources */,
@@ -751,14 +707,6 @@
 				DE958D2B22E6E83F00DB2C21 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		DEAC320B259DDAAB00B72134 /* GlobalTabBarControllerstoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DEAC320C259DDAAB00B72134 /* Base */,
-			);
-			name = GlobalTabBarControllerstoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
