@@ -7,16 +7,9 @@ target 'InfiniteScrollAnotherPattern' do
 
   # Pods for InfiniteScrollAnotherPattern
   pod 'AlamofireImage'
-  pod 'Apollo' 
-  pod 'BulletinBoard'
-  pod 'HorizonCalendar' 
-  pod 'GRDB.swift'
   pod 'SkeletonView'
-  pod 'KeychainAccess'
   pod 'SwiftyAttributes'
-  pod 'DropDown'
   pod 'Toast-Swift', '~> 5.0.1'
-  pod 'GrowingTextView', '0.7.2'
   pod 'ActiveLabel'
 
   target 'InfiniteScrollAnotherPatternTests' do
