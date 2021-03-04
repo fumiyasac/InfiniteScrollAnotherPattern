@@ -62,7 +62,7 @@ final class MainViewController: UIViewController {
     @IBOutlet private weak var categoryTabSelectBarView: UIView!
     @IBOutlet private weak var categoryContentsContainerView: UIView!
 
-    //
+    // MEMO: UIPageViewControllerの高速スクロール防止用UIView
     @IBOutlet private weak var preventHighSpeedScrollCoverView: UIView!
     
     // MEMO: バー表示をするUIViewの幅に関する制約
@@ -83,11 +83,10 @@ final class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        //
+        // タブ位置と表示画面の初期状態を設定する
         selectedCollectionViewIndex = categoryTabLists.count
-
         let initialIndexPath = IndexPath(row: categoryTabLists.count, section: 0)
-        decideCategoryTabPositionAndDisplayPageViewController(at: initialIndexPath)
+        changeScreenByScrollContents(at: initialIndexPath)
     }
 
     // MARK: - Private Function (Initialize about UserInterface)
@@ -109,6 +108,7 @@ final class MainViewController: UIViewController {
     // タブ型表現用UICollectionViewの初期設定
     private func setupCategoryTabCollectionView() {
 
+        // MEMO: InterfaceBuilder内でUICollectionViewにおけるレイアウト属性計算用クラス「CategoryTabCollectionViewFlowLayout」を設定する
         categoryTabCollectionView.delegate = self
         categoryTabCollectionView.dataSource = self
         categoryTabCollectionView.registerCustomCell(CategoryTabCollectionViewCell.self)
@@ -119,16 +119,13 @@ final class MainViewController: UIViewController {
         categoryTabCollectionView.delaysContentTouches = false
         categoryTabCollectionView.showsHorizontalScrollIndicator = false
         categoryTabCollectionView.showsVerticalScrollIndicator = false
-
-        //
         categoryTabCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
-
     }
 
     // UIPageViewControllerの高速スクロール防止用UIViewの初期設定
     private func setupPreventHighSpeedScrollCoverView() {
 
-        //
+        // MEMO: 最初はスクロールができる様にするために非表示にする
         preventHighSpeedScrollCoverView.isHidden = true
     }
 
@@ -144,7 +141,7 @@ final class MainViewController: UIViewController {
     private func setupCategoryContentsPageViewController() {
 
         // MEMO: 現時点ではダミー表示用のViewControllerをセットしている
-        (0...7).forEach { index in
+        (0..<categoryTabLists.count).forEach { index in
             // MEMO: タブ型UI部分に配置したいViewControllerの一覧をインスタンスにして格納配列に配置する
             // FIXME: 正規の画面に後程差し替える
             let targetViewController = SampleViewController.instantiate()
@@ -183,58 +180,66 @@ final class MainViewController: UIViewController {
 
     // MARK: - Private Function (Change State Function about UserInterface)
 
-    //
-    private func decideCategoryTabPositionAndDisplayPageViewController(at indexPath: IndexPath) {
+    // スクロールイベントを起点とした表示する画面とタブ位置の調節を実施する
+    private func changeScreenByScrollContents(at indexPath: IndexPath) {
         
-        //
+        // 表示画面数とカテゴリー数が異なるかの確認
         if categoryTabLists.count != targetViewControllerLists.count {
+            assertionFailure("表示画面数とカテゴリー数が異なる")
             return
         }
 
-        //
+        // 画面状態更新処理
+        changePageViewControllerPosition(at: indexPath, animated: false)
+    }
+
+    // タブのタップイベントを起点とした表示する画面とタブ位置の調節を実施する
+    private func changeScreenByTabTap(at indexPath: IndexPath) {
+
+        // タップされたタブのインデックス値を取得する
+        selectedCollectionViewIndex = indexPath.row % categoryTabLists.count + (categoryTabLists.count - 1)
+
+        // 画面状態更新処理
+        changePageViewControllerPosition(at: indexPath, animated: true)
+    }
+
+    // タブとUIPageViewController画面状態を更新するための処理
+    private func changePageViewControllerPosition(at indexPath: IndexPath, animated: Bool) {
+
         if let targetPageViewController = pageViewController {
-            
-            // Debug.
-            print("indexPath.row:", indexPath.row)
-            print("selectedPageViewControllerIndex:", selectedPageViewControllerIndex)
-            
-            //
-            
-            //
+
+            // UIPageViewControllerの表示位置を更新して現在表示中のUIPageViewControllerのインデックス値を更新
             targetPageViewController.setViewControllers([targetViewControllerLists[indexPath.row % categoryTabLists.count]], direction: .forward, animated: false, completion: {  _ in
                 self.selectedPageViewControllerIndex = indexPath.row % self.categoryTabLists.count
             })
 
-            //
-            categoryTabCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
-            
-            //
+            // 引数で渡されたIndexPathの値に合致する位置までセルをスクロールする
+            categoryTabCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: animated)
+
+            // タブのデザイン状態の更新
             DispatchQueue.main.async {
                 self.changeCategoryTabDesign(at: indexPath)
             }
         }
     }
-
-    //
+    
+    // タブのデザイン適用を実施する
     private func changeCategoryTabDesign(at indexPath: IndexPath) {
         
-        //
+        // まずは見えているセル全ての配色を全てリセットする
         for visibleCell in categoryTabCollectionView.visibleCells {
             if let visibleCell = visibleCell as? CategoryTabCollectionViewCell {
                 visibleCell.setColor(shouldActive: false)
             }
         }
 
-        //
+        // 次に該当するセル要素を取得して配色を適用＆
         if let targetCell = categoryTabCollectionView.cellForItem(at: indexPath) as? CategoryTabCollectionViewCell {
 
-            //
-            //selectedCollectionViewIndex = indexPath.row
-
-            //
+            // セル要素に対して表示中の配色を適用する
             targetCell.setColor(shouldActive: true)
 
-            //
+            // バー表示をするUIViewの幅をアニメーションを伴って表示文字幅に合わせる
             let additionnalWidth: CGFloat = 16.0
             let targetCellCharacterWidth = targetCell.getCharacterWidthWithinCell()
             categoryTabSelectBarViewWidthConstraint.constant = targetCellCharacterWidth + additionnalWidth
@@ -242,7 +247,7 @@ final class MainViewController: UIViewController {
                 self.categoryTabSelectBarView.setNeedsLayout()
                 self.categoryTabSelectBarView.layoutIfNeeded()
             })
-        //
+
         } else {
             selectedCollectionViewIndex = nil
         }
@@ -255,18 +260,7 @@ extension MainViewController: UICollectionViewDelegate {
 
     // セルを選択した際のふるまいを設定する
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        //
-        selectedCollectionViewIndex = indexPath.row % categoryTabLists.count + (categoryTabLists.count - 1)
-        
-        //
-        categoryTabCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        if let targetPageViewController = pageViewController {
-            targetPageViewController.setViewControllers([targetViewControllerLists[indexPath.row % categoryTabLists.count]], direction: .forward, animated: false, completion: nil)
-        }
-        changeCategoryTabDesign(at: indexPath)
-
-        //decideCategoryTabPositionAndDisplayPageViewController(at: indexPath)
+        changeScreenByTabTap(at: indexPath)
     }
 }
 
@@ -319,6 +313,7 @@ extension MainViewController: UIPageViewControllerDelegate {
     // ページが動いたタイミング（この場合はスワイプアニメーションに該当）に実行したい処理を記載するメソッド
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
 
+        // スワイプアニメーションが完了していない時は以降の処理は実施しない
         preventHighSpeedScrollCoverView.isHidden = true
 
         // スワイプアニメーションが完了していない時は以降の処理は実施しない
@@ -380,58 +375,60 @@ extension MainViewController: UIPageViewControllerDataSource {
 
 extension MainViewController: UIScrollViewDelegate {
 
-    //
+    // UIScrollViewをタップしてスクロールが開始された時に実行される処理
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 
-        //
+        // UIPageViewControllerにおけるスクロール開始位置のX座標をセット
         startPageViewControllerPosX = scrollView.contentOffset.x
 
-        //
+        // UICollectionViewの位置調整用の計算処理
         let categoryTabContentWidth = categoryTabCollectionView.contentSize.width / CGFloat(cellCopyCount)
         let categoryTabContentOffsetX = categoryTabContentWidth * 2 + (CategoryTabCollectionViewCell.cellWidth * CGFloat(selectedPageViewControllerIndex))
         let categoryTabContentCenterMargin = (UIScreen.main.bounds.size.width - CategoryTabCollectionViewCell.cellWidth) / 2
 
-        //
+        // UICollectionViewにおけるスクロール開始位置のX座標をセット
         startCollectionViewPosX = categoryTabContentOffsetX - categoryTabContentCenterMargin
     }
 
-    //
+    // UIScrollViewのスクロール操作中に実行される処理
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
-        //
+        // UIScrollViewのスクロールがタブで実行されたものかを判定する
         let isCategoryTabCollectionViewScroll: Bool = (scrollView == categoryTabCollectionView)
 
-        //
+        // (1) UICollectionViewのスクロールであった場合
         if isCategoryTabCollectionViewScroll {
 
+            // MEMO: ここでは閾値を超過した際に無限スクロールに見せるために中央にもどす処理を実施している
             let categoryTabContentWidth = categoryTabCollectionView.contentSize.width / CGFloat(cellCopyCount)
-            //
+
+            // UICollectionViewが左側の閾値を超過した場合
             if categoryTabCollectionView.contentOffset.x <= CategoryTabCollectionViewCell.cellWidth {
                 categoryTabCollectionView.contentOffset.x = (categoryTabContentWidth * 2) + CategoryTabCollectionViewCell.cellWidth
-            //
+            // UICollectionViewが右側の閾値を超過した場合
             } else if (categoryTabCollectionView.contentOffset.x) >= (categoryTabContentWidth * 3) + CategoryTabCollectionViewCell.cellWidth {
                 categoryTabCollectionView.contentOffset.x = categoryTabContentWidth + CategoryTabCollectionViewCell.cellWidth
             }
 
-        //
+        // (2) UIPageViewControllerのスクロールであった場合
         } else {
 
-            //
+            // UIPageViewControllerとUICollectionViewのX座標の変化量を算出する
             let changedPageViewControllerPosX = startPageViewControllerPosX - scrollView.contentOffset.x
             let changedCollectionViewPosX = CategoryTabCollectionViewCell.cellWidth * (changedPageViewControllerPosX / UIScreen.main.bounds.size.width)
 
-            //
+            // UIPageViewControllerがスクロール状態の場合は高速スクロール防止用UIViewを表示させる
             if abs(changedPageViewControllerPosX) > 0 && abs(changedPageViewControllerPosX) < UIScreen.main.bounds.size.width {
                 preventHighSpeedScrollCoverView.isHidden = false
             }
             
-            //
+            // UIPageViewControllerを動かした分だけUICollectionViewも一緒に動作させる
             if changedCollectionViewPosX != 0 {
                 categoryTabCollectionView.contentOffset.x = startCollectionViewPosX - changedCollectionViewPosX
             }
         }
 
-        //
+        // スクロール中にも真ん中にあるタブのデザイン状態の更新を実行する
         let collectionViewCenter = self.view.convert(categoryTabCollectionView.center, to: categoryTabCollectionView)
         guard let targetIndexPath = categoryTabCollectionView.indexPathForItem(at: collectionViewCenter) else {
             return
@@ -441,34 +438,33 @@ extension MainViewController: UIScrollViewDelegate {
         }
     }
 
-    //
+    // UIScrollViewから指が離れてその後も慣性スクロールが発生しうる場合に実行される処理
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
 
-        //
+        // 完全に止まる瞬間はdecelerateはfalseとなるのでその時にスクロールが止まった時の処理を実行する
         if !decelerate {
             handleScrollForCenteringCategoryTab(scrollView)
         }
     }
 
-    //
+    // UIScrollViewのスクロールが急停止した時に実行される処理
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
 
-        //
+        // スクロールが止まった時の処理を実行する
         handleScrollForCenteringCategoryTab(scrollView)
     }
 
+    // スクロールが停止した時にUIPageViewControllerとUICollectionViewの画面状態をハンドリングする
     private func handleScrollForCenteringCategoryTab(_ scrollView: UIScrollView) {
 
-        //
+        // スクロールが終わったら再度スクロールができる様にするために非表示にする
         preventHighSpeedScrollCoverView.isHidden = true
 
-        //
+        // 当該箇所のIndexPathを取得して画面状態の更新処理を実行する
         let collectionViewCenter = self.view.convert(categoryTabCollectionView.center, to: categoryTabCollectionView)
         guard let targetIndexPath = categoryTabCollectionView.indexPathForItem(at: collectionViewCenter) else {
             return
         }
-
-        //
-        decideCategoryTabPositionAndDisplayPageViewController(at: targetIndexPath)
+        changeScreenByScrollContents(at: targetIndexPath)
     }
 }
