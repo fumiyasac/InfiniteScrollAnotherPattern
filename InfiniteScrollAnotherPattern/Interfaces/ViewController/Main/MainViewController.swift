@@ -35,12 +35,8 @@ final class MainViewController: UIViewController {
     // タブ型UICollectionViewにおける表示セルをコピーする倍数
     private let cellCopyCount: Int = 5
 
-    // 現在表示しているViewControllerのタグ番号
-    private var selectedPageViewControllerIndex: Int = 0 {
-        didSet {
-            print("現在のIndex値: ", selectedPageViewControllerIndex)
-        }
-    }
+    // 現在表示しているUIPageViewControllerのインデックス番号
+    private var selectedPageViewControllerIndex: Int = 0
 
     // 無限スクロールタブ部分に表示するカテゴリーデータを保持する配列
     private var categoryTabLists: [CategoryTab] = []
@@ -51,7 +47,7 @@ final class MainViewController: UIViewController {
     // ContainerViewにEmbedしたUIPageViewControllerのインスタンスを保持する
     private var pageViewController: UIPageViewController!
 
-    // 現在のセル番号
+    // 現在のカテゴリー表示用のUICollectionViewのインデックス番号
     private var selectedCollectionViewIndex: Int?
 
     // コンテンツ配置用PageViewControllerにおけるX軸方向のScroll開始位置
@@ -66,6 +62,9 @@ final class MainViewController: UIViewController {
     @IBOutlet private weak var categoryTabSelectBarView: UIView!
     @IBOutlet private weak var categoryContentsContainerView: UIView!
 
+    //
+    @IBOutlet private weak var preventHighSpeedScrollCoverView: UIView!
+    
     // MEMO: バー表示をするUIViewの幅に関する制約
     @IBOutlet private weak var categoryTabSelectBarViewWidthConstraint: NSLayoutConstraint!
 
@@ -76,6 +75,7 @@ final class MainViewController: UIViewController {
 
         setupCategoryTab()
         setupCategoryTabCollectionView()
+        setupPreventHighSpeedScrollCoverView()
         setupCategoryTabSelectBarView()
         setupCategoryContentsPageViewController()
     }
@@ -122,6 +122,14 @@ final class MainViewController: UIViewController {
 
         //
         categoryTabCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
+
+    }
+
+    // UIPageViewControllerの高速スクロール防止用UIViewの初期設定
+    private func setupPreventHighSpeedScrollCoverView() {
+
+        //
+        preventHighSpeedScrollCoverView.isHidden = true
     }
 
     // バー表示をするUIViewの初期設定
@@ -169,6 +177,7 @@ final class MainViewController: UIViewController {
                 return
             }
             scrollView.delegate = self
+            scrollView.decelerationRate = UIScrollView.DecelerationRate.fast
         }
     }
 
@@ -187,14 +196,18 @@ final class MainViewController: UIViewController {
             
             // Debug.
             print("indexPath.row:", indexPath.row)
-
+            print("selectedPageViewControllerIndex:", selectedPageViewControllerIndex)
+            
             //
-            selectedPageViewControllerIndex = indexPath.row % categoryTabLists.count
-            targetPageViewController.setViewControllers([targetViewControllerLists[selectedPageViewControllerIndex]], direction: .forward, animated: false, completion: nil)
+            
+            //
+            targetPageViewController.setViewControllers([targetViewControllerLists[indexPath.row % categoryTabLists.count]], direction: .forward, animated: false, completion: {  _ in
+                self.selectedPageViewControllerIndex = indexPath.row % self.categoryTabLists.count
+            })
 
             //
             categoryTabCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
-
+            
             //
             DispatchQueue.main.async {
                 self.changeCategoryTabDesign(at: indexPath)
@@ -216,7 +229,7 @@ final class MainViewController: UIViewController {
         if let targetCell = categoryTabCollectionView.cellForItem(at: indexPath) as? CategoryTabCollectionViewCell {
 
             //
-            selectedCollectionViewIndex = indexPath.row
+            //selectedCollectionViewIndex = indexPath.row
 
             //
             targetCell.setColor(shouldActive: true)
@@ -229,7 +242,6 @@ final class MainViewController: UIViewController {
                 self.categoryTabSelectBarView.setNeedsLayout()
                 self.categoryTabSelectBarView.layoutIfNeeded()
             })
-
         //
         } else {
             selectedCollectionViewIndex = nil
@@ -245,7 +257,16 @@ extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         //
-        decideCategoryTabPositionAndDisplayPageViewController(at: indexPath)
+        selectedCollectionViewIndex = indexPath.row % categoryTabLists.count + (categoryTabLists.count - 1)
+        
+        //
+        categoryTabCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        if let targetPageViewController = pageViewController {
+            targetPageViewController.setViewControllers([targetViewControllerLists[indexPath.row % categoryTabLists.count]], direction: .forward, animated: false, completion: nil)
+        }
+        changeCategoryTabDesign(at: indexPath)
+
+        //decideCategoryTabPositionAndDisplayPageViewController(at: indexPath)
     }
 }
 
@@ -297,6 +318,8 @@ extension MainViewController: UIPageViewControllerDelegate {
     
     // ページが動いたタイミング（この場合はスワイプアニメーションに該当）に実行したい処理を記載するメソッド
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+
+        preventHighSpeedScrollCoverView.isHidden = true
 
         // スワイプアニメーションが完了していない時は以降の処理は実施しない
         if !completed { return }
@@ -398,6 +421,11 @@ extension MainViewController: UIScrollViewDelegate {
             let changedCollectionViewPosX = CategoryTabCollectionViewCell.cellWidth * (changedPageViewControllerPosX / UIScreen.main.bounds.size.width)
 
             //
+            if abs(changedPageViewControllerPosX) > 0 && abs(changedPageViewControllerPosX) < UIScreen.main.bounds.size.width {
+                preventHighSpeedScrollCoverView.isHidden = false
+            }
+            
+            //
             if changedCollectionViewPosX != 0 {
                 categoryTabCollectionView.contentOffset.x = startCollectionViewPosX - changedCollectionViewPosX
             }
@@ -430,6 +458,9 @@ extension MainViewController: UIScrollViewDelegate {
     }
 
     private func handleScrollForCenteringCategoryTab(_ scrollView: UIScrollView) {
+
+        //
+        preventHighSpeedScrollCoverView.isHidden = true
 
         //
         let collectionViewCenter = self.view.convert(categoryTabCollectionView.center, to: categoryTabCollectionView)
