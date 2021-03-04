@@ -56,6 +56,13 @@ final class MainViewController: UIViewController {
     // タブ型UICollectionViewにおけるX軸方向のScroll開始位置
     private var startCollectionViewPosX: CGFloat = 0
 
+    // ボタン押下時の軽微な振動を追加する
+    private let buttonFeedbackGenerator: UIImpactFeedbackGenerator = {
+        let generator: UIImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+        generator.prepare()
+        return generator
+    }()
+
     // MARK: - @IBOutlet
 
     @IBOutlet private weak var categoryTabCollectionView: UICollectionView!
@@ -208,9 +215,14 @@ final class MainViewController: UIViewController {
 
         if let targetPageViewController = pageViewController {
 
-            // UIPageViewControllerの表示位置を更新して現在表示中のUIPageViewControllerのインデックス値を更新
+            // UIPageViewControllerの表示位置を更新する
             targetPageViewController.setViewControllers([targetViewControllerLists[indexPath.row % categoryTabLists.count]], direction: .forward, animated: false, completion: {  _ in
+
+                // 現在表示中のUIPageViewControllerのインデックス値を更新
                 self.selectedPageViewControllerIndex = indexPath.row % self.categoryTabLists.count
+
+                // 「コツッ」とした感じの端末フィードバックを発火する
+                self.buttonFeedbackGenerator.impactOccurred()
             })
 
             // 引数で渡されたIndexPathの値に合致する位置までセルをスクロールする
