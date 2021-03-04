@@ -80,6 +80,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNavigationBarTitle("べんりな情報")
         setupCategoryTab()
         setupCategoryTabCollectionView()
         setupPreventHighSpeedScrollCoverView()
@@ -139,7 +140,7 @@ final class MainViewController: UIViewController {
     // バー表示をするUIViewの初期設定
     private func setupCategoryTabSelectBarView() {
 
-        categoryTabSelectBarView.backgroundColor = Constants.Color.categoryTabActive
+        categoryTabSelectBarView.backgroundColor = Constants.Color.main
         categoryTabSelectBarView.layer.cornerRadius = 12.0
         categoryTabSelectBarView.layer.masksToBounds = true
     }

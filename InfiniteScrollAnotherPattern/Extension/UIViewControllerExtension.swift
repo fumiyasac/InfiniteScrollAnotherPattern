@@ -20,6 +20,8 @@ extension UIViewController {
         attributes[NSAttributedString.Key.font] = UIFont(name: "HiraKakuProN-W6", size: 14.0)
         attributes[NSAttributedString.Key.foregroundColor] = UIColor.white
 
+        self.navigationController!.navigationBar.barTintColor = Constants.Color.main
+        self.navigationController!.navigationBar.isTranslucent = false
         self.navigationController!.navigationBar.titleTextAttributes = attributes
 
         // タイトルを入れる
@@ -28,7 +30,7 @@ extension UIViewController {
 
     // 戻るボタンの「戻る」テキストを削除した状態にするメソッド
     func removeBackButtonText() {
-        self.navigationController!.navigationBar.tintColor = UIColor.white
+        self.navigationController!.navigationBar.tintColor = .white
         if #available(iOS 14.0, *) {
             self.navigationItem.backButtonDisplayMode = .minimal
             self.navigationItem.backButtonTitle = self.navigationItem.title

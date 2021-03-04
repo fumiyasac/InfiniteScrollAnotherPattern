@@ -15,9 +15,8 @@ struct Constants {
 
     // このUI実装サンプルで利用する各種カラー定義
     struct Color {
-
-        // MEMO: Categoryタブ型表示部分の選択＆非選択時の配色
-        static let categoryTabActive: UIColor = UIColor(code: "#ee693f")
-        static let categoryTabDeactive: UIColor = .gray
+        static let main: UIColor = UIColor(code: "#ee863f")
+        static let barDefault: UIColor = UIColor(code: "#bbbbbb")
+        static let barActive: UIColor = UIColor(code: "#eeeeee")
     }
 }

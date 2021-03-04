@@ -22,18 +22,18 @@ final class CategoryTabCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Function
 
-    //
+    // タブ表示のための情報をセットする
     func setCell(_ categoryTab: CategoryTab) {
         categoryTitleLabel.text = categoryTab.title
         setColor(shouldActive: false)
     }
 
-    //
+    // タブ表示のための色をセットする
     func setColor(shouldActive: Bool) {
-        categoryTitleLabel.textColor = shouldActive ? UIColor(code: "#dddddd") : UIColor(code: "#aaaaaa")
+        categoryTitleLabel.textColor = shouldActive ? Constants.Color.barActive : Constants.Color.barDefault
     }
 
-    //
+    // タブ文字列から幅を取得する
     func getCharacterWidthWithinCell() -> CGFloat {
         let targetText = categoryTitleLabel.text
         let targetAttributes = [NSAttributedString.Key.font: UIFont(name: "HiraginoSans-W6", size: 12.0)!]
