@@ -30,13 +30,13 @@ final class CategoryTabCollectionViewCell: UICollectionViewCell {
 
     // タブ表示のための色をセットする
     func setColor(shouldActive: Bool) {
-        categoryTitleLabel.textColor = shouldActive ? Constants.Color.barActive : Constants.Color.barDefault
+        categoryTitleLabel.textColor = shouldActive ? Constants.Colors.categoryScrollTabActive : Constants.Colors.categoryScrollTabDefault
     }
 
     // タブ文字列から幅を取得する
     func getCharacterWidthWithinCell() -> CGFloat {
         let targetText = categoryTitleLabel.text
-        let targetAttributes = [NSAttributedString.Key.font: UIFont(name: "HiraginoSans-W6", size: 12.0)!]
+        let targetAttributes = [NSAttributedString.Key.font : Constants.FontStyles.categoryScrollTab]
         if let characterSize = targetText?.size(withAttributes: targetAttributes) {
             return characterSize.width
         } else {

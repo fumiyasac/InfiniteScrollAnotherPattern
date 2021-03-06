@@ -140,7 +140,7 @@ final class MainViewController: UIViewController {
     // バー表示をするUIViewの初期設定
     private func setupCategoryTabSelectBarView() {
 
-        categoryTabSelectBarView.backgroundColor = Constants.Color.main
+        categoryTabSelectBarView.backgroundColor = Constants.Colors.primary
         categoryTabSelectBarView.layer.cornerRadius = 12.0
         categoryTabSelectBarView.layer.masksToBounds = true
     }
