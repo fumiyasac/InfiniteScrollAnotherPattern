@@ -20,9 +20,13 @@ extension UIViewController {
             NSAttributedString.Key.font : Constants.FontStyles.navigationBarTitle,
             NSAttributedString.Key.foregroundColor : Constants.Colors.navigationBarTitle
         ]
-        self.navigationController!.navigationBar.barTintColor = Constants.Colors.primary
-        self.navigationController!.navigationBar.isTranslucent = false
-        self.navigationController!.navigationBar.titleTextAttributes = attributes
+        guard let navigationController = self.navigationController else {
+            assertionFailure("UINavigationControllerを使用していない")
+            return
+        }
+        navigationController.navigationBar.barTintColor = Constants.Colors.primary
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.titleTextAttributes = attributes
 
         // タイトルを入れる
         self.navigationItem.title = title
@@ -32,6 +36,7 @@ extension UIViewController {
     func removeBackButtonText() {
         self.navigationController!.navigationBar.tintColor = .white
         if #available(iOS 14.0, *) {
+            // MEMO: iOS14からは戻るボタンを長押しして戻ることができるのでその際に遷移元の画面でのタイトル名を取得可能にする
             self.navigationItem.backButtonDisplayMode = .minimal
             self.navigationItem.backButtonTitle = self.navigationItem.title
         } else {
