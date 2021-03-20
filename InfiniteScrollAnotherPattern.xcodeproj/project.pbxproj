@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BD1A8EE875F60035298E3A22 /* Pods_InfiniteScrollAnotherPatternTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CBFA6E2BE8B0C63C8E3FB47 /* Pods_InfiniteScrollAnotherPatternTests.framework */; };
 		BE6B44A45EAE94F5AD8BAC23 /* Pods_InfiniteScrollAnotherPattern_InfiniteScrollAnotherPatternUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DED55D170DE8DE2FD1D42FE /* Pods_InfiniteScrollAnotherPattern_InfiniteScrollAnotherPatternUITests.framework */; };
+		DE31DE1E26061A1C00964122 /* TabContentsErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE31DE1D26061A1C00964122 /* TabContentsErrorView.xib */; };
+		DE31DE2326061A2A00964122 /* TabContentsErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31DE2226061A2900964122 /* TabContentsErrorView.swift */; };
 		DE35CA1125F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE35CA1025F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift */; };
 		DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */; };
 		DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D2322E6E83B00DB2C21 /* MainViewController.swift */; };
@@ -65,6 +67,8 @@
 		6F987137A74771E5F05B97AA /* Pods-InfiniteScrollAnotherPattern.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfiniteScrollAnotherPattern.debug.xcconfig"; path = "Target Support Files/Pods-InfiniteScrollAnotherPattern/Pods-InfiniteScrollAnotherPattern.debug.xcconfig"; sourceTree = "<group>"; };
 		B6A86C3B3006239CC42A7845 /* Pods-InfiniteScrollAnotherPattern-InfiniteScrollAnotherPatternUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfiniteScrollAnotherPattern-InfiniteScrollAnotherPatternUITests.release.xcconfig"; path = "Target Support Files/Pods-InfiniteScrollAnotherPattern-InfiniteScrollAnotherPatternUITests/Pods-InfiniteScrollAnotherPattern-InfiniteScrollAnotherPatternUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C5706D7239F569E8266844DE /* Pods-InfiniteScrollAnotherPattern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfiniteScrollAnotherPattern.release.xcconfig"; path = "Target Support Files/Pods-InfiniteScrollAnotherPattern/Pods-InfiniteScrollAnotherPattern.release.xcconfig"; sourceTree = "<group>"; };
+		DE31DE1D26061A1C00964122 /* TabContentsErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabContentsErrorView.xib; sourceTree = "<group>"; };
+		DE31DE2226061A2900964122 /* TabContentsErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentsErrorView.swift; sourceTree = "<group>"; };
 		DE35CA1025F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		DE958D1E22E6E83B00DB2C21 /* InfiniteScrollAnotherPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteScrollAnotherPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE31DE1C260619DA00964122 /* TabContentsErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				DE31DE2226061A2900964122 /* TabContentsErrorView.swift */,
+				DE31DE1D26061A1C00964122 /* TabContentsErrorView.xib */,
+			);
+			path = TabContentsErrorView;
+			sourceTree = "<group>";
+		};
 		DE958D1522E6E83B00DB2C21 = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +243,7 @@
 			children = (
 				DE958D5F22F0204E00DB2C21 /* CustomViewBase.swift */,
 				DEBB023825AE78510080980C /* CategoryTabCollectionViewCell */,
+				DE31DE1C260619DA00964122 /* TabContentsErrorView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -508,6 +522,7 @@
 				DE9CFD2625E2A03A00BDE010 /* ArticleListViewController.storyboard in Resources */,
 				DE9CFD2E25E2A06400BDE010 /* GridListViewController.storyboard in Resources */,
 				DE958D2C22E6E83F00DB2C21 /* LaunchScreen.storyboard in Resources */,
+				DE31DE1E26061A1C00964122 /* TabContentsErrorView.xib in Resources */,
 				DE958D2922E6E83F00DB2C21 /* Assets.xcassets in Resources */,
 				DE958D2722E6E83B00DB2C21 /* MainViewController.storyboard in Resources */,
 				DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */,
@@ -650,6 +665,7 @@
 				DE9CFDC225E4E82600BDE010 /* CategoryTab.swift in Sources */,
 				DE9CFD7725E4C5CB00BDE010 /* SampleViewController.swift in Sources */,
 				DE958D5E22F01FCE00DB2C21 /* UICollectionViewExtension.swift in Sources */,
+				DE31DE2326061A2A00964122 /* TabContentsErrorView.swift in Sources */,
 				DE9BEA41259BBE40000E94B0 /* UIViewControllerExtension.swift in Sources */,
 				DEC2C79025B46A160001BD20 /* CategoryTabCollectionViewCell.swift in Sources */,
 				DE958D5C22F01FBC00DB2C21 /* NSObjectProtocolExtension.swift in Sources */,
