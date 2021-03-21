@@ -11,6 +11,8 @@
 		BE6B44A45EAE94F5AD8BAC23 /* Pods_InfiniteScrollAnotherPattern_InfiniteScrollAnotherPatternUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DED55D170DE8DE2FD1D42FE /* Pods_InfiniteScrollAnotherPattern_InfiniteScrollAnotherPatternUITests.framework */; };
 		DE31DE1E26061A1C00964122 /* TabContentsErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE31DE1D26061A1C00964122 /* TabContentsErrorView.xib */; };
 		DE31DE2326061A2A00964122 /* TabContentsErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31DE2226061A2900964122 /* TabContentsErrorView.swift */; };
+		DE31DE292606DF7400964122 /* MainFloatingActionButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE31DE282606DF7400964122 /* MainFloatingActionButtonView.xib */; };
+		DE31DE2E2606DFB200964122 /* MainFloatingActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31DE2D2606DFB200964122 /* MainFloatingActionButtonView.swift */; };
 		DE35CA1125F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE35CA1025F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift */; };
 		DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */; };
 		DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D2322E6E83B00DB2C21 /* MainViewController.swift */; };
@@ -69,6 +71,8 @@
 		C5706D7239F569E8266844DE /* Pods-InfiniteScrollAnotherPattern.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfiniteScrollAnotherPattern.release.xcconfig"; path = "Target Support Files/Pods-InfiniteScrollAnotherPattern/Pods-InfiniteScrollAnotherPattern.release.xcconfig"; sourceTree = "<group>"; };
 		DE31DE1D26061A1C00964122 /* TabContentsErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabContentsErrorView.xib; sourceTree = "<group>"; };
 		DE31DE2226061A2900964122 /* TabContentsErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContentsErrorView.swift; sourceTree = "<group>"; };
+		DE31DE282606DF7400964122 /* MainFloatingActionButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainFloatingActionButtonView.xib; sourceTree = "<group>"; };
+		DE31DE2D2606DFB200964122 /* MainFloatingActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFloatingActionButtonView.swift; sourceTree = "<group>"; };
 		DE35CA1025F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		DE958D1E22E6E83B00DB2C21 /* InfiniteScrollAnotherPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteScrollAnotherPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +146,15 @@
 				DE31DE1D26061A1C00964122 /* TabContentsErrorView.xib */,
 			);
 			path = TabContentsErrorView;
+			sourceTree = "<group>";
+		};
+		DE31DE272606DF3500964122 /* MainFloatingActionButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				DE31DE2D2606DFB200964122 /* MainFloatingActionButtonView.swift */,
+				DE31DE282606DF7400964122 /* MainFloatingActionButtonView.xib */,
+			);
+			path = MainFloatingActionButtonView;
 			sourceTree = "<group>";
 		};
 		DE958D1522E6E83B00DB2C21 = {
@@ -243,6 +256,7 @@
 			children = (
 				DE958D5F22F0204E00DB2C21 /* CustomViewBase.swift */,
 				DEBB023825AE78510080980C /* CategoryTabCollectionViewCell */,
+				DE31DE272606DF3500964122 /* MainFloatingActionButtonView */,
 				DE31DE1C260619DA00964122 /* TabContentsErrorView */,
 			);
 			path = View;
@@ -525,6 +539,7 @@
 				DE31DE1E26061A1C00964122 /* TabContentsErrorView.xib in Resources */,
 				DE958D2922E6E83F00DB2C21 /* Assets.xcassets in Resources */,
 				DE958D2722E6E83B00DB2C21 /* MainViewController.storyboard in Resources */,
+				DE31DE292606DF7400964122 /* MainFloatingActionButtonView.xib in Resources */,
 				DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */,
 				DE9CFD3325E2A07500BDE010 /* ToggleListViewController.storyboard in Resources */,
 				DE9CFD7225E4C59100BDE010 /* SampleViewController.storyboard in Resources */,
@@ -674,6 +689,7 @@
 				DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */,
 				DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */,
 				DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */,
+				DE31DE2E2606DFB200964122 /* MainFloatingActionButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

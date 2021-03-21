@@ -12,10 +12,10 @@ import UIKit
 // MARK: - TabContentsErrorViewDelegate
 
 protocol TabContentsErrorViewDelegate: NSObjectProtocol {
-    func reload()
+    func reloadButtonTapped()
 }
 
-class TabContentsErrorView: CustomViewBase {
+final class TabContentsErrorView: CustomViewBase {
 
     // MARK: - Property
 
