@@ -18,7 +18,8 @@ struct Constants {
 
     // このUI実装サンプルで利用する各種カラー定義
     struct Colors {
-        static let primary: UIColor = UIColor(code: "#ee863f")
+        static let primary: UIColor = UIColor(code: "#ffa000")
+        static let secondary: UIColor = UIColor(code: "#ffc107")
         static let navigationBarTitle: UIColor = UIColor.white
         static let categoryScrollTabDefault: UIColor = UIColor(code: "#bbbbbb")
         static let categoryScrollTabActive: UIColor = UIColor(code: "#eeeeee")
