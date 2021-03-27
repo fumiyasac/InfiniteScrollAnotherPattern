@@ -22,7 +22,7 @@ struct Constants {
         static let secondary: UIColor = UIColor(code: "#ffc107")
         static let navigationBarTitle: UIColor = UIColor.white
         static let categoryScrollTabDefault: UIColor = UIColor(code: "#bbbbbb")
-        static let categoryScrollTabActive: UIColor = UIColor(code: "#eeeeee")
+        static let categoryScrollTabActive: UIColor = UIColor(code: "#efefef")
     }
 
     // このUI実装サンプルで利用する各種フォント定義
