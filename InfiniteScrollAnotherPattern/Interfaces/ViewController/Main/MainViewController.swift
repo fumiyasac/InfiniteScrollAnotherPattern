@@ -246,7 +246,8 @@ final class MainViewController: UIViewController {
             }
         }
 
-        // 次に該当するセル要素を取得して配色を適用＆
+        // 次に該当するセル要素を取得して配色を適用する ＆ バー表示をするUIViewの幅をアニメーション処理を実施する
+        // → Category表示用のTab部分に配置しているView要素の幅を表示テキストの長さに合う様な動きはAutoLayoutの制約変更で実現している点がポイント
         if let targetCell = categoryTabCollectionView.cellForItem(at: indexPath) as? CategoryTabCollectionViewCell {
 
             // セル要素に対して表示中の配色を適用する
@@ -260,9 +261,6 @@ final class MainViewController: UIViewController {
                 self.categoryTabSelectBarView.setNeedsLayout()
                 self.categoryTabSelectBarView.layoutIfNeeded()
             })
-
-        } else {
-            selectedCollectionViewIndex = nil
         }
     }
 }
