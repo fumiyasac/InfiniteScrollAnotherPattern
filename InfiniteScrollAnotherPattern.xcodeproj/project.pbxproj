@@ -37,6 +37,7 @@
 		DE9CFD7725E4C5CB00BDE010 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFD7625E4C5CB00BDE010 /* SampleViewController.swift */; };
 		DE9CFDC225E4E82600BDE010 /* CategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFDC125E4E82600BDE010 /* CategoryTab.swift */; };
 		DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */; };
+		DEAC8516261B5C330069CC62 /* TopContensViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC8515261B5C320069CC62 /* TopContensViewModel.swift */; };
 		DEC2C79025B46A160001BD20 /* CategoryTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */; };
 		DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */; };
 		DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C79D25B4772D0001BD20 /* AppConstants.swift */; };
@@ -103,6 +104,7 @@
 		DE9CFD7625E4C5CB00BDE010 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		DE9CFDC125E4E82600BDE010 /* CategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTab.swift; sourceTree = "<group>"; };
 		DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
+		DEAC8515261B5C320069CC62 /* TopContensViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopContensViewModel.swift; sourceTree = "<group>"; };
 		DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTabCollectionViewCell.xib; sourceTree = "<group>"; };
 		DEC2C79D25B4772D0001BD20 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -262,20 +264,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		DE9BEA4B259BBE7C000E94B0 /* Contract */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Contract;
-			sourceTree = "<group>";
-		};
-		DE9BEA4C259BBE83000E94B0 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		DE9CFD1E25E13EA000BDE010 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,8 +287,7 @@
 		DE9CFDBA25E4E58700BDE010 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				DE9BEA4B259BBE7C000E94B0 /* Contract */,
-				DE9BEA4C259BBE83000E94B0 /* Presenter */,
+				DEAC8514261B5C130069CC62 /* ViewModel */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -347,6 +334,14 @@
 				DE958D5822F01F4800DB2C21 /* ViewController */,
 			);
 			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		DEAC8514261B5C130069CC62 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DEAC8515261B5C320069CC62 /* TopContensViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DEBB023825AE78510080980C /* CategoryTabCollectionViewCell */ = {
@@ -687,6 +682,7 @@
 				DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */,
 				DE9BEA46259BBE5D000E94B0 /* UITableViewExtension.swift in Sources */,
 				DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */,
+				DEAC8516261B5C330069CC62 /* TopContensViewModel.swift in Sources */,
 				DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */,
 				DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */,
 				DE31DE2E2606DFB200964122 /* MainFloatingActionButtonView.swift in Sources */,
