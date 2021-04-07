@@ -14,6 +14,7 @@
 		DE31DE292606DF7400964122 /* MainFloatingActionButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE31DE282606DF7400964122 /* MainFloatingActionButtonView.xib */; };
 		DE31DE2E2606DFB200964122 /* MainFloatingActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31DE2D2606DFB200964122 /* MainFloatingActionButtonView.swift */; };
 		DE35CA1125F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE35CA1025F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift */; };
+		DE6D23DB261DF6D200C1C05E /* DependenciesDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D23DA261DF6D200C1C05E /* DependenciesDefinition.swift */; };
 		DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */; };
 		DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE958D2322E6E83B00DB2C21 /* MainViewController.swift */; };
 		DE958D2722E6E83B00DB2C21 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE958D2522E6E83B00DB2C21 /* MainViewController.storyboard */; };
@@ -38,6 +39,7 @@
 		DE9CFDC225E4E82600BDE010 /* CategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFDC125E4E82600BDE010 /* CategoryTab.swift */; };
 		DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */; };
 		DEAC8516261B5C330069CC62 /* TopContensViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC8515261B5C320069CC62 /* TopContensViewModel.swift */; };
+		DEAC851F261C5EA00069CC62 /* DependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC851E261C5EA00069CC62 /* DependenciesContainer.swift */; };
 		DEC2C79025B46A160001BD20 /* CategoryTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */; };
 		DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */; };
 		DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C79D25B4772D0001BD20 /* AppConstants.swift */; };
@@ -75,6 +77,7 @@
 		DE31DE282606DF7400964122 /* MainFloatingActionButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainFloatingActionButtonView.xib; sourceTree = "<group>"; };
 		DE31DE2D2606DFB200964122 /* MainFloatingActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFloatingActionButtonView.swift; sourceTree = "<group>"; };
 		DE35CA1025F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		DE6D23DA261DF6D200C1C05E /* DependenciesDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesDefinition.swift; sourceTree = "<group>"; };
 		DE958D1E22E6E83B00DB2C21 /* InfiniteScrollAnotherPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteScrollAnotherPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE958D2122E6E83B00DB2C21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE958D2322E6E83B00DB2C21 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		DE9CFDC125E4E82600BDE010 /* CategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTab.swift; sourceTree = "<group>"; };
 		DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
 		DEAC8515261B5C320069CC62 /* TopContensViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopContensViewModel.swift; sourceTree = "<group>"; };
+		DEAC851E261C5EA00069CC62 /* DependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesContainer.swift; sourceTree = "<group>"; };
 		DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTabCollectionViewCell.xib; sourceTree = "<group>"; };
 		DEC2C79D25B4772D0001BD20 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 				DE9CFDBC25E4E5B600BDE010 /* Architecture */,
 				DE958D5522F01F0E00DB2C21 /* Classes */,
 				DEC2C79925B473620001BD20 /* Constants */,
+				DEAC851D261C5D8D0069CC62 /* DependencyInjection */,
 				DEC2C7B325B4936A0001BD20 /* Enum */,
 				DE958D5722F01F3800DB2C21 /* Extension */,
 				DE9CFDC025E4E72900BDE010 /* Interfaces */,
@@ -342,6 +347,15 @@
 				DEAC8515261B5C320069CC62 /* TopContensViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DEAC851D261C5D8D0069CC62 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				DEAC851E261C5EA00069CC62 /* DependenciesContainer.swift */,
+				DE6D23DA261DF6D200C1C05E /* DependenciesDefinition.swift */,
+			);
+			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
 		DEBB023825AE78510080980C /* CategoryTabCollectionViewCell */ = {
@@ -671,6 +685,7 @@
 				DE35CA1125F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift in Sources */,
 				DE9CFD3825E2A11500BDE010 /* ArticleListViewController.swift in Sources */,
 				DE9BEA3C259BBDFF000E94B0 /* UIColorExtension.swift in Sources */,
+				DEAC851F261C5EA00069CC62 /* DependenciesContainer.swift in Sources */,
 				DE9CFD4525E2A18F00BDE010 /* ToggleListViewController.swift in Sources */,
 				DE9CFDC225E4E82600BDE010 /* CategoryTab.swift in Sources */,
 				DE9CFD7725E4C5CB00BDE010 /* SampleViewController.swift in Sources */,
@@ -682,6 +697,7 @@
 				DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */,
 				DE9BEA46259BBE5D000E94B0 /* UITableViewExtension.swift in Sources */,
 				DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */,
+				DE6D23DB261DF6D200C1C05E /* DependenciesDefinition.swift in Sources */,
 				DEAC8516261B5C330069CC62 /* TopContensViewModel.swift in Sources */,
 				DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */,
 				DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */,
