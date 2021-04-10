@@ -41,7 +41,8 @@ final class DependeciesContainer {
         if let dependency = dependecies[dependencyKey] as? T {
             return dependency
         } else {
-            fatalError("Cannot Resolve Dependencies.")
+            let protocolTypeName = NSString(string: "\(protocolType)").components(separatedBy: ".").last!
+            fatalError("Can't resolve dependencies. Please register \(protocolTypeName) and resolve dependencies about using \(protocolTypeName)Impl class.")
         }
     }
 }
