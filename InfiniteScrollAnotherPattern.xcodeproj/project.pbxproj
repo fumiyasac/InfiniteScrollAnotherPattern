@@ -37,8 +37,9 @@
 		DE9CFD7225E4C59100BDE010 /* SampleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9CFD7125E4C59100BDE010 /* SampleViewController.storyboard */; };
 		DE9CFD7725E4C5CB00BDE010 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFD7625E4C5CB00BDE010 /* SampleViewController.swift */; };
 		DE9CFDC225E4E82600BDE010 /* CategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9CFDC125E4E82600BDE010 /* CategoryTab.swift */; };
+		DE9E146226231E660011F238 /* MainTopContentsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E146126231E660011F238 /* MainTopContentsContract.swift */; };
+		DE9E146A26231E790011F238 /* MainTopContentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E146926231E790011F238 /* MainTopContentsPresenter.swift */; };
 		DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */; };
-		DEAC8516261B5C330069CC62 /* TopContensViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC8515261B5C320069CC62 /* TopContensViewModel.swift */; };
 		DEAC851F261C5EA00069CC62 /* DependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC851E261C5EA00069CC62 /* DependenciesContainer.swift */; };
 		DEC2C79025B46A160001BD20 /* CategoryTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */; };
 		DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */; };
@@ -106,8 +107,9 @@
 		DE9CFD7125E4C59100BDE010 /* SampleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleViewController.storyboard; sourceTree = "<group>"; };
 		DE9CFD7625E4C5CB00BDE010 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		DE9CFDC125E4E82600BDE010 /* CategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTab.swift; sourceTree = "<group>"; };
+		DE9E146126231E660011F238 /* MainTopContentsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTopContentsContract.swift; sourceTree = "<group>"; };
+		DE9E146926231E790011F238 /* MainTopContentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTopContentsPresenter.swift; sourceTree = "<group>"; };
 		DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
-		DEAC8515261B5C320069CC62 /* TopContensViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopContensViewModel.swift; sourceTree = "<group>"; };
 		DEAC851E261C5EA00069CC62 /* DependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesContainer.swift; sourceTree = "<group>"; };
 		DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTabCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -292,7 +294,8 @@
 		DE9CFDBA25E4E58700BDE010 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				DEAC8514261B5C130069CC62 /* ViewModel */,
+				DE9E146026231D7F0011F238 /* Presentation */,
+				DEAC8514261B5C130069CC62 /* Contract */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -341,12 +344,20 @@
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
-		DEAC8514261B5C130069CC62 /* ViewModel */ = {
+		DE9E146026231D7F0011F238 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				DEAC8515261B5C320069CC62 /* TopContensViewModel.swift */,
+				DE9E146926231E790011F238 /* MainTopContentsPresenter.swift */,
 			);
-			path = ViewModel;
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DEAC8514261B5C130069CC62 /* Contract */ = {
+			isa = PBXGroup;
+			children = (
+				DE9E146126231E660011F238 /* MainTopContentsContract.swift */,
+			);
+			path = Contract;
 			sourceTree = "<group>";
 		};
 		DEAC851D261C5D8D0069CC62 /* DependencyInjection */ = {
@@ -683,6 +694,7 @@
 				DEC2C7B525B495D50001BD20 /* CategoryScreenLayout.swift in Sources */,
 				DE9CFD4025E2A15F00BDE010 /* GridListViewController.swift in Sources */,
 				DE35CA1125F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift in Sources */,
+				DE9E146226231E660011F238 /* MainTopContentsContract.swift in Sources */,
 				DE9CFD3825E2A11500BDE010 /* ArticleListViewController.swift in Sources */,
 				DE9BEA3C259BBDFF000E94B0 /* UIColorExtension.swift in Sources */,
 				DEAC851F261C5EA00069CC62 /* DependenciesContainer.swift in Sources */,
@@ -698,10 +710,10 @@
 				DE9BEA46259BBE5D000E94B0 /* UITableViewExtension.swift in Sources */,
 				DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */,
 				DE6D23DB261DF6D200C1C05E /* DependenciesDefinition.swift in Sources */,
-				DEAC8516261B5C330069CC62 /* TopContensViewModel.swift in Sources */,
 				DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */,
 				DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */,
 				DE31DE2E2606DFB200964122 /* MainFloatingActionButtonView.swift in Sources */,
+				DE9E146A26231E790011F238 /* MainTopContentsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
