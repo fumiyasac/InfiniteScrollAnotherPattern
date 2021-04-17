@@ -11,6 +11,8 @@ target 'InfiniteScrollAnotherPattern' do
   pod 'SwiftyAttributes'
   pod 'Toast-Swift', '~> 5.0.1'
   pod 'ActiveLabel'
+  pod 'RealmSwift'
+  pod 'KeychainAccess'
 
   target 'InfiniteScrollAnotherPatternTests' do
     inherit! :search_paths
