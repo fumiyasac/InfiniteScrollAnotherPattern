@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '13.0'
 
 target 'InfiniteScrollAnotherPattern' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -11,7 +11,7 @@ target 'InfiniteScrollAnotherPattern' do
   pod 'SwiftyAttributes'
   pod 'Toast-Swift', '~> 5.0.1'
   pod 'ActiveLabel'
-  pod 'RealmSwift'
+  pod 'GRDB.swift'
   pod 'KeychainAccess'
 
   target 'InfiniteScrollAnotherPatternTests' do
