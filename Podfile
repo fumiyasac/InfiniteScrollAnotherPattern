@@ -13,6 +13,7 @@ target 'InfiniteScrollAnotherPattern' do
   pod 'ActiveLabel'
   pod 'GRDB.swift'
   pod 'KeychainAccess'
+  pod 'SwiftyUserDefaults', '~> 5.0'
 
   target 'InfiniteScrollAnotherPatternTests' do
     inherit! :search_paths
