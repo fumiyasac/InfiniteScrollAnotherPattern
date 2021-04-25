@@ -45,6 +45,8 @@
 		DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */; };
 		DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C79D25B4772D0001BD20 /* AppConstants.swift */; };
 		DEC2C7B525B495D50001BD20 /* CategoryScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C7B425B495D50001BD20 /* CategoryScreenLayout.swift */; };
+		DED0AF142635A6C600A6E5E6 /* DefaultsKeysExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED0AF132635A6C600A6E5E6 /* DefaultsKeysExtension.swift */; };
+		DEF69DB72635ADA800DCD2F6 /* ApiAuthenticatedToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF69DB62635ADA800DCD2F6 /* ApiAuthenticatedToken.swift */; };
 		F214B7164AFBC4B3908569D3 /* Pods_InfiniteScrollAnotherPattern.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DA912FD8BFE6BEB104AFC1 /* Pods_InfiniteScrollAnotherPattern.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,8 @@
 		DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTabCollectionViewCell.xib; sourceTree = "<group>"; };
 		DEC2C79D25B4772D0001BD20 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DEC2C7B425B495D50001BD20 /* CategoryScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenLayout.swift; sourceTree = "<group>"; };
+		DED0AF132635A6C600A6E5E6 /* DefaultsKeysExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeysExtension.swift; sourceTree = "<group>"; };
+		DEF69DB62635ADA800DCD2F6 /* ApiAuthenticatedToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAuthenticatedToken.swift; sourceTree = "<group>"; };
 		E4DA912FD8BFE6BEB104AFC1 /* Pods_InfiniteScrollAnotherPattern.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InfiniteScrollAnotherPattern.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB15C7915712D40C10B15AB /* Pods-InfiniteScrollAnotherPatternTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfiniteScrollAnotherPatternTests.debug.xcconfig"; path = "Target Support Files/Pods-InfiniteScrollAnotherPatternTests/Pods-InfiniteScrollAnotherPatternTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,6 +205,7 @@
 				DEC2C7B325B4936A0001BD20 /* Enum */,
 				DE958D5722F01F3800DB2C21 /* Extension */,
 				DE9CFDC025E4E72900BDE010 /* Interfaces */,
+				DED0AF122635A55300A6E5E6 /* UserDefault */,
 			);
 			path = InfiniteScrollAnotherPattern;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 			children = (
 				DE9CFDBE25E4E5D900BDE010 /* Entity */,
 				DEBB023B25AE7DF50080980C /* Repository */,
+				DEF69DB62635ADA800DCD2F6 /* ApiAuthenticatedToken.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -407,6 +413,14 @@
 				DEC2C7B425B495D50001BD20 /* CategoryScreenLayout.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		DED0AF122635A55300A6E5E6 /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				DED0AF132635A6C600A6E5E6 /* DefaultsKeysExtension.swift */,
+			);
+			path = UserDefault;
 			sourceTree = "<group>";
 		};
 		DEFA61C425BAF66E00FC039C /* Main */ = {
@@ -702,6 +716,7 @@
 				DEC2C7B525B495D50001BD20 /* CategoryScreenLayout.swift in Sources */,
 				DE9CFD4025E2A15F00BDE010 /* GridListViewController.swift in Sources */,
 				DE35CA1125F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift in Sources */,
+				DEF69DB72635ADA800DCD2F6 /* ApiAuthenticatedToken.swift in Sources */,
 				DE9E146226231E660011F238 /* MainTopContentsContract.swift in Sources */,
 				DE9CFD3825E2A11500BDE010 /* ArticleListViewController.swift in Sources */,
 				DE9BEA3C259BBDFF000E94B0 /* UIColorExtension.swift in Sources */,
@@ -717,6 +732,7 @@
 				DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */,
 				DE9BEA46259BBE5D000E94B0 /* UITableViewExtension.swift in Sources */,
 				DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */,
+				DED0AF142635A6C600A6E5E6 /* DefaultsKeysExtension.swift in Sources */,
 				DE6D23DB261DF6D200C1C05E /* DependenciesDefinition.swift in Sources */,
 				DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */,
 				DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */,
