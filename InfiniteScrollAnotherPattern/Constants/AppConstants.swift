@@ -32,8 +32,27 @@ struct Constants {
     }
 
     // このUI実装サンプルで利用する各種フォント定義
-    struct FontStyles {
+    struct Fonts {
         static let navigationBarTitle: UIFont = UIFont(name: "HiraginoSans-W6", size: 14.0)!
         static let categoryScrollTab: UIFont = UIFont(name: "HiraginoSans-W6", size: 12.0)!
+    }
+
+    // このUI実装サンプルで利用するTabBar画面用デザイン定義
+    struct TabBarStyles {
+        static let itemSize = CGSize(width: 28.0, height: 28.0)
+        static let normalColor: UIColor = UIColor.lightGray
+        static let selectedColor: UIColor = Colors.primary
+        static let tabBarItemFont = UIFont(name: "HelveticaNeue-Medium", size: 10)!
+
+        // MEMO: タブの選択時・非選択時の色とアイコンのサイズを決める
+        // UITabBarItem用のAttributeを決める
+        static let normalAttributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.font: tabBarItemFont,
+            NSAttributedString.Key.foregroundColor: normalColor
+        ]
+        static let selectedAttributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.font: tabBarItemFont,
+            NSAttributedString.Key.foregroundColor: selectedColor
+        ]
     }
 }

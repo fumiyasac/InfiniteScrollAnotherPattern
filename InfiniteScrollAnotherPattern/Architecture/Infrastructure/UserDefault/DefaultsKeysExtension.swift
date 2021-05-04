@@ -14,8 +14,8 @@ extension DefaultsKeys {
 
     // MARK: - Property
 
-    // MEMO: APIリクエスト用の認証トークン
-    var apiAuthenticatedToken: DefaultsKey<String?> {
-        .init("ApiAuthenticatedToken")
+    // MEMO: 選択しているタブを保持するための値
+    var currentSelectedTab: DefaultsKey<GlobalTabBarController.Tab> {
+        .init("CurrentSelectedTab", defaultValue: GlobalTabBarController.Tab.article)
     }
 }

@@ -42,6 +42,13 @@
 		DE9E146A26231E790011F238 /* MainTopContentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E146926231E790011F238 /* MainTopContentsPresenter.swift */; };
 		DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */; };
 		DEAC851F261C5EA00069CC62 /* DependenciesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC851E261C5EA00069CC62 /* DependenciesContainer.swift */; };
+		DEB2634526410B9B00593E8B /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB2634426410B9B00593E8B /* RootViewController.swift */; };
+		DEB2634C26410D5500593E8B /* GlobalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB2634B26410D5500593E8B /* GlobalTabBarController.swift */; };
+		DEB2634E26410EA400593E8B /* RootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB2634D26410EA400593E8B /* RootViewController.storyboard */; };
+		DEB2635026410EB800593E8B /* GlobalTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB2634F26410EB800593E8B /* GlobalTabBarController.storyboard */; };
+		DEB263542641119900593E8B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB263532641119900593E8B /* OnboardingViewController.swift */; };
+		DEB26356264111BA00593E8B /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB26355264111BA00593E8B /* OnboardingViewController.storyboard */; };
+		DEB2635A26412CD700593E8B /* GlobalTabBarTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB2635926412CD700593E8B /* GlobalTabBarTransition.swift */; };
 		DEC2C79025B46A160001BD20 /* CategoryTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */; };
 		DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */; };
 		DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C79D25B4772D0001BD20 /* AppConstants.swift */; };
@@ -115,6 +122,13 @@
 		DE9E146926231E790011F238 /* MainTopContentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTopContentsPresenter.swift; sourceTree = "<group>"; };
 		DEAC3206259DDA3C00B72134 /* StoryboardInstantiatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiatable.swift; sourceTree = "<group>"; };
 		DEAC851E261C5EA00069CC62 /* DependenciesContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesContainer.swift; sourceTree = "<group>"; };
+		DEB2634426410B9B00593E8B /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		DEB2634B26410D5500593E8B /* GlobalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTabBarController.swift; sourceTree = "<group>"; };
+		DEB2634D26410EA400593E8B /* RootViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootViewController.storyboard; sourceTree = "<group>"; };
+		DEB2634F26410EB800593E8B /* GlobalTabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GlobalTabBarController.storyboard; sourceTree = "<group>"; };
+		DEB263532641119900593E8B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		DEB26355264111BA00593E8B /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
+		DEB2635926412CD700593E8B /* GlobalTabBarTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTabBarTransition.swift; sourceTree = "<group>"; };
 		DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTabCollectionViewCell.xib; sourceTree = "<group>"; };
 		DEC2C79D25B4772D0001BD20 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -215,7 +229,6 @@
 				DEC2C7B325B4936A0001BD20 /* Enum */,
 				DE958D5722F01F3800DB2C21 /* Extension */,
 				DE9CFDC025E4E72900BDE010 /* Interfaces */,
-				DED0AF122635A55300A6E5E6 /* UserDefault */,
 			);
 			path = InfiniteScrollAnotherPattern;
 			sourceTree = "<group>";
@@ -241,7 +254,8 @@
 		DE958D5522F01F0E00DB2C21 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DE35CA1025F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift */,
+				DEB2635826412CBB00593E8B /* Transition */,
+				DEB2635726412CAE00593E8B /* UICollectionViewLayout */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -249,6 +263,9 @@
 		DE958D5622F01F3000DB2C21 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				DEB2635126410FB100593E8B /* Onboarding */,
+				DEB2634A26410CAB00593E8B /* Root */,
+				DEB2634926410CA000593E8B /* GlobalTabBar */,
 				DE9CFD1E25E13EA000BDE010 /* Main */,
 			);
 			path = Storyboard;
@@ -270,6 +287,9 @@
 		DE958D5822F01F4800DB2C21 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DEB2635226410FC500593E8B /* Onboarding */,
+				DEB2634626410C3600593E8B /* Root */,
+				DEB2634726410C3F00593E8B /* GlobalTabBar */,
 				DEFA61C425BAF66E00FC039C /* Main */,
 			);
 			path = ViewController;
@@ -387,9 +407,74 @@
 			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
+		DEB2634626410C3600593E8B /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DEB2634426410B9B00593E8B /* RootViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		DEB2634726410C3F00593E8B /* GlobalTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				DEB2634B26410D5500593E8B /* GlobalTabBarController.swift */,
+			);
+			path = GlobalTabBar;
+			sourceTree = "<group>";
+		};
+		DEB2634926410CA000593E8B /* GlobalTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				DEB2634F26410EB800593E8B /* GlobalTabBarController.storyboard */,
+			);
+			path = GlobalTabBar;
+			sourceTree = "<group>";
+		};
+		DEB2634A26410CAB00593E8B /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				DEB2634D26410EA400593E8B /* RootViewController.storyboard */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		DEB2635126410FB100593E8B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DEB26355264111BA00593E8B /* OnboardingViewController.storyboard */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DEB2635226410FC500593E8B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DEB263532641119900593E8B /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DEB2635726412CAE00593E8B /* UICollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+				DE35CA1025F077A4008C6E99 /* CategoryTabCollectionViewFlowLayout.swift */,
+			);
+			path = UICollectionViewLayout;
+			sourceTree = "<group>";
+		};
+		DEB2635826412CBB00593E8B /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				DEB2635926412CD700593E8B /* GlobalTabBarTransition.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		DEB3F04D262B2E4F00D3FA8E /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				DED0AF122635A55300A6E5E6 /* UserDefault */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -589,13 +674,16 @@
 				DE9CFD2625E2A03A00BDE010 /* ArticleListViewController.storyboard in Resources */,
 				DE9CFD2E25E2A06400BDE010 /* GridListViewController.storyboard in Resources */,
 				DE958D2C22E6E83F00DB2C21 /* LaunchScreen.storyboard in Resources */,
+				DEB2634E26410EA400593E8B /* RootViewController.storyboard in Resources */,
 				DE31DE1E26061A1C00964122 /* TabContentsErrorView.xib in Resources */,
 				DE958D2922E6E83F00DB2C21 /* Assets.xcassets in Resources */,
 				DE958D2722E6E83B00DB2C21 /* MainViewController.storyboard in Resources */,
+				DEB26356264111BA00593E8B /* OnboardingViewController.storyboard in Resources */,
 				DE31DE292606DF7400964122 /* MainFloatingActionButtonView.xib in Resources */,
 				DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */,
 				DE9CFD3325E2A07500BDE010 /* ToggleListViewController.storyboard in Resources */,
 				DE9CFD7225E4C59100BDE010 /* SampleViewController.storyboard in Resources */,
+				DEB2635026410EB800593E8B /* GlobalTabBarController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,9 +818,13 @@
 				DEF69DB72635ADA800DCD2F6 /* ApiAuthenticatedToken.swift in Sources */,
 				DE293C84263AEFD800980EB1 /* ScreenCoodinator.swift in Sources */,
 				DE9E146226231E660011F238 /* MainTopContentsContract.swift in Sources */,
+				DEB263542641119900593E8B /* OnboardingViewController.swift in Sources */,
+				DEB2634C26410D5500593E8B /* GlobalTabBarController.swift in Sources */,
 				DE9CFD3825E2A11500BDE010 /* ArticleListViewController.swift in Sources */,
 				DE9BEA3C259BBDFF000E94B0 /* UIColorExtension.swift in Sources */,
+				DEB2635A26412CD700593E8B /* GlobalTabBarTransition.swift in Sources */,
 				DEAC851F261C5EA00069CC62 /* DependenciesContainer.swift in Sources */,
+				DEB2634526410B9B00593E8B /* RootViewController.swift in Sources */,
 				DE9CFD4525E2A18F00BDE010 /* ToggleListViewController.swift in Sources */,
 				DE9CFDC225E4E82600BDE010 /* CategoryTab.swift in Sources */,
 				DE9CFD7725E4C5CB00BDE010 /* SampleViewController.swift in Sources */,
@@ -856,7 +948,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -912,7 +1004,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
