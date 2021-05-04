@@ -49,6 +49,8 @@
 		DEB263542641119900593E8B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB263532641119900593E8B /* OnboardingViewController.swift */; };
 		DEB26356264111BA00593E8B /* OnboardingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEB26355264111BA00593E8B /* OnboardingViewController.storyboard */; };
 		DEB2635A26412CD700593E8B /* GlobalTabBarTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB2635926412CD700593E8B /* GlobalTabBarTransition.swift */; };
+		DEB2635D26414F2600593E8B /* KeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB2635C26414F2600593E8B /* KeychainConstants.swift */; };
+		DEB2635F26414FA400593E8B /* JsonAccessTokenKeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB2635E26414FA400593E8B /* JsonAccessTokenKeychainStore.swift */; };
 		DEC2C79025B46A160001BD20 /* CategoryTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */; };
 		DEC2C79125B46A160001BD20 /* CategoryTabCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */; };
 		DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2C79D25B4772D0001BD20 /* AppConstants.swift */; };
@@ -129,6 +131,8 @@
 		DEB263532641119900593E8B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		DEB26355264111BA00593E8B /* OnboardingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingViewController.storyboard; sourceTree = "<group>"; };
 		DEB2635926412CD700593E8B /* GlobalTabBarTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTabBarTransition.swift; sourceTree = "<group>"; };
+		DEB2635C26414F2600593E8B /* KeychainConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConstants.swift; sourceTree = "<group>"; };
+		DEB2635E26414FA400593E8B /* JsonAccessTokenKeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAccessTokenKeychainStore.swift; sourceTree = "<group>"; };
 		DEC2C78E25B46A160001BD20 /* CategoryTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		DEC2C78F25B46A160001BD20 /* CategoryTabCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTabCollectionViewCell.xib; sourceTree = "<group>"; };
 		DEC2C79D25B4772D0001BD20 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -471,10 +475,20 @@
 			path = Transition;
 			sourceTree = "<group>";
 		};
+		DEB2635B26414DF900593E8B /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				DEB2635C26414F2600593E8B /* KeychainConstants.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
 		DEB3F04D262B2E4F00D3FA8E /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				DEB2635B26414DF900593E8B /* Keychain */,
 				DED0AF122635A55300A6E5E6 /* UserDefault */,
+				DEB2635E26414FA400593E8B /* JsonAccessTokenKeychainStore.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -835,9 +849,11 @@
 				DE958D5C22F01FBC00DB2C21 /* NSObjectProtocolExtension.swift in Sources */,
 				DEAC3207259DDA3C00B72134 /* StoryboardInstantiatable.swift in Sources */,
 				DE9BEA46259BBE5D000E94B0 /* UITableViewExtension.swift in Sources */,
+				DEB2635F26414FA400593E8B /* JsonAccessTokenKeychainStore.swift in Sources */,
 				DEC2C79E25B4772D0001BD20 /* AppConstants.swift in Sources */,
 				DED0AF142635A6C600A6E5E6 /* DefaultsKeysExtension.swift in Sources */,
 				DE6D23DB261DF6D200C1C05E /* DependenciesDefinition.swift in Sources */,
+				DEB2635D26414F2600593E8B /* KeychainConstants.swift in Sources */,
 				DE958D2422E6E83B00DB2C21 /* MainViewController.swift in Sources */,
 				DE958D2222E6E83B00DB2C21 /* AppDelegate.swift in Sources */,
 				DE31DE2E2606DFB200964122 /* MainFloatingActionButtonView.swift in Sources */,
