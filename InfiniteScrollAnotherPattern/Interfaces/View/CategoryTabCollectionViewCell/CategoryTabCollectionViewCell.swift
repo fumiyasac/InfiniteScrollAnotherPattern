@@ -36,7 +36,7 @@ final class CategoryTabCollectionViewCell: UICollectionViewCell {
     // タブ文字列から幅を取得する
     func getCharacterWidthWithinCell() -> CGFloat {
         let targetText = categoryTitleLabel.text
-        let targetAttributes = [NSAttributedString.Key.font : Constants.FontStyles.categoryScrollTab]
+        let targetAttributes = [NSAttributedString.Key.font : Constants.Fonts.categoryScrollTab]
         if let characterSize = targetText?.size(withAttributes: targetAttributes) {
             return characterSize.width
         } else {

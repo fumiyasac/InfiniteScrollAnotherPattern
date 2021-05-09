@@ -17,7 +17,7 @@ extension UIViewController {
 
         // NavigationControllerのデザイン調整を行う
         let attributes: [NSAttributedString.Key : Any] = [
-            NSAttributedString.Key.font : Constants.FontStyles.navigationBarTitle,
+            NSAttributedString.Key.font : Constants.Fonts.navigationBarTitle,
             NSAttributedString.Key.foregroundColor : Constants.Colors.navigationBarTitle
         ]
         guard let navigationController = self.navigationController else {
