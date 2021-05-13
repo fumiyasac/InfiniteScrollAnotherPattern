@@ -5,7 +5,7 @@
 
 ### 本サンプルの画面キャプチャ
 
-<img height="300" src="https://user-images.githubusercontent.com/949561/118068410-4ca5a300-b3dd-11eb-9af7-bc67064e8c61.png"> <img height="300" src="https://user-images.githubusercontent.com/949561/118068417-4fa09380-b3dd-11eb-9a52-44fd37c7026a.png">
+<img width="414" src="https://user-images.githubusercontent.com/949561/118068410-4ca5a300-b3dd-11eb-9af7-bc67064e8c61.png"> <img width="414" src="https://user-images.githubusercontent.com/949561/118068417-4fa09380-b3dd-11eb-9a52-44fd37c7026a.png">
 
 ※ このサンプルは必要最低限の機能のみを実装したものになっています。
 
