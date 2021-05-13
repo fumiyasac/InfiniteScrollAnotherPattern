@@ -23,8 +23,8 @@ final class CategoryTabCollectionViewCell: UICollectionViewCell {
     // MARK: - Function
 
     // タブ表示のための情報をセットする
-    func setCell(_ categoryTab: CategoryTab) {
-        categoryTitleLabel.text = categoryTab.title
+    func setCell(_ category: Category) {
+        categoryTitleLabel.text = category.title
         setColor(shouldActive: false)
     }
 

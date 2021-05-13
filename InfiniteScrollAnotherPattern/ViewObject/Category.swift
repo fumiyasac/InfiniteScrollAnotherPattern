@@ -1,5 +1,5 @@
 //
-//  CategoryTab.swift
+//  Category.swift
 //  InfiniteScrollAnotherPattern
 //
 //  Created by 酒井文也 on 2021/02/23.
@@ -8,17 +8,15 @@
 
 import Foundation
 
-struct CategoryTab: Hashable, Equatable {
+struct Category: Hashable, Equatable {
     let id: Int
     let title: String
-    let slug: String
     
     // MARK: - Initializer
 
-    init(id: Int, title: String, slug: String) {
+    init(id: Int, title: String) {
         self.id = id
         self.title = title
-        self.slug = slug
     }
 
     // MARK: - Hashable
@@ -28,7 +26,7 @@ struct CategoryTab: Hashable, Equatable {
         hasher.combine(id)
     }
 
-    static func == (lhs: CategoryTab, rhs: CategoryTab) -> Bool {
-        return lhs.id == rhs.id && lhs.title == rhs.title && lhs.slug == rhs.slug
+    static func == (lhs: Category, rhs: Category) -> Bool {
+        return lhs.id == rhs.id && lhs.title == rhs.title
     }
 }

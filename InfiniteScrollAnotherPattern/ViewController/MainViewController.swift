@@ -39,10 +39,10 @@ final class MainViewController: UIViewController {
     private var selectedPageViewControllerIndex: Int = 0
 
     // 無限スクロールタブ部分に表示するカテゴリーデータを保持する配列
-    private var categoryTabLists: [CategoryTab] = []
+    private var categories: [Category] = []
 
     // ページングして表示させるViewControllerを保持する配列
-    private var targetViewControllerLists: [UIViewController] = []
+    private var targetViewControllers: [UIViewController] = []
 
     // ContainerViewにEmbedしたUIPageViewControllerのインスタンスを保持する
     private var pageViewController: UIPageViewController!
@@ -80,7 +80,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavigationBarTitle("べんりな情報")
+        setupNavigationBarTitle("サンプルタイトル")
         setupCategoryTab()
         setupCategoryTabCollectionView()
         setupPreventHighSpeedScrollCoverView()
@@ -92,8 +92,8 @@ final class MainViewController: UIViewController {
         super.viewDidAppear(animated)
 
         // タブ位置と表示画面の初期状態を設定する
-        selectedCollectionViewIndex = categoryTabLists.count
-        let initialIndexPath = IndexPath(row: categoryTabLists.count, section: 0)
+        selectedCollectionViewIndex = categories.count
+        let initialIndexPath = IndexPath(row: categories.count, section: 0)
         changeScreenByScrollContents(at: initialIndexPath)
     }
 
@@ -101,15 +101,15 @@ final class MainViewController: UIViewController {
 
     // タブに表示したいカテゴリー名を取得してセットする
     private func setupCategoryTab() {
-        categoryTabLists = [
-            CategoryTab(id: 1, title: "おすすめ", slug: "recommend"),
-            CategoryTab(id: 2, title: "グルメ", slug: "gourmet"),
-            CategoryTab(id: 3, title: "くらし情報", slug: "lifestyle"),
-            CategoryTab(id: 4, title: "ファッション", slug: "fashion"),
-            CategoryTab(id: 5, title: "お役立ち", slug: "useful"),
-            CategoryTab(id: 6, title: "おうち生活", slug: "meals"),
-            CategoryTab(id: 7, title: "記事カテゴリー", slug: "article_category"),
-            CategoryTab(id: 8, title: "フォトカテゴリー", slug: "photo_category")
+        categories = [
+            Category(id: 1, title: "おすすめ一覧"),
+            Category(id: 2, title: "グルメ関連記事"),
+            Category(id: 3, title: "お取り寄せ商品"),
+            Category(id: 4, title: "住まい関連情報"),
+            Category(id: 5, title: "ライフスタイル"),
+            Category(id: 6, title: "エンタメ記事"),
+            Category(id: 7, title: "イベント関連情報"),
+            Category(id: 8, title: "皆様からの投稿")
         ]
     }
 
@@ -148,13 +148,12 @@ final class MainViewController: UIViewController {
     // タブに表示するカテゴリー名に対応する画面を構築する
     private func setupCategoryContentsPageViewController() {
 
-        // MEMO: 現時点ではダミー表示用のViewControllerをセットしている
-        (0..<categoryTabLists.count).forEach { index in
+        // MEMO: カテゴリー画面表示用のViewControllerをセットしている
+        categories.forEach { category in
             // MEMO: タブ型UI部分に配置したいViewControllerの一覧をインスタンスにして格納配列に配置する
-            // FIXME: 正規の画面に後程差し替える
-            let targetViewController = SampleViewController.instantiate()
-            targetViewController.setIndex(index)
-            targetViewControllerLists.append(targetViewController)
+            let categoryViewController = CategoryViewController.instantiate()
+            categoryViewController.setCategory(category)
+            targetViewControllers.append(categoryViewController)
         }
 
         // ContainerViewにEmbedしたUIPageViewControllerを取得する
@@ -173,7 +172,7 @@ final class MainViewController: UIViewController {
             targetPageViewController.dataSource = self
 
             // 最初に表示する画面として配列の先頭のViewControllerを設定する
-            targetPageViewController.setViewControllers([targetViewControllerLists[0]], direction: .forward, animated: false, completion: nil)
+            targetPageViewController.setViewControllers([targetViewControllers[0]], direction: .forward, animated: false, completion: nil)
         }
 
         // UIPageViewControllerにおけるUIScrollViewDelegateの宣言
@@ -192,7 +191,7 @@ final class MainViewController: UIViewController {
     private func changeScreenByScrollContents(at indexPath: IndexPath) {
         
         // 表示画面数とカテゴリー数が異なるかの確認
-        if categoryTabLists.count != targetViewControllerLists.count {
+        if categories.count != targetViewControllers.count {
             assertionFailure("表示画面数とカテゴリー数が異なる")
             return
         }
@@ -205,7 +204,7 @@ final class MainViewController: UIViewController {
     private func changeScreenByTabTap(at indexPath: IndexPath) {
 
         // タップされたタブのインデックス値を取得する
-        selectedCollectionViewIndex = indexPath.row % categoryTabLists.count + (categoryTabLists.count - 1)
+        selectedCollectionViewIndex = indexPath.row % categories.count + (categories.count - 1)
 
         // 画面状態更新処理
         changePageViewControllerPosition(at: indexPath, animated: true)
@@ -217,10 +216,10 @@ final class MainViewController: UIViewController {
         if let targetPageViewController = pageViewController {
 
             // UIPageViewControllerの表示位置を更新する
-            targetPageViewController.setViewControllers([targetViewControllerLists[indexPath.row % categoryTabLists.count]], direction: .forward, animated: false, completion: {  _ in
+            targetPageViewController.setViewControllers([targetViewControllers[indexPath.row % categories.count]], direction: .forward, animated: false, completion: {  _ in
 
                 // 現在表示中のUIPageViewControllerのインデックス値を更新
-                self.selectedPageViewControllerIndex = indexPath.row % self.categoryTabLists.count
+                self.selectedPageViewControllerIndex = indexPath.row % self.categories.count
 
                 // 「コツッ」とした感じの端末フィードバックを発火する
                 self.buttonFeedbackGenerator.impactOccurred()
@@ -305,14 +304,14 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 extension MainViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryTabLists.count * cellCopyCount
+        return categories.count * cellCopyCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCustomCell(with: CategoryTabCollectionViewCell.self, indexPath: indexPath)
-        let index = indexPath.row % categoryTabLists.count
-        let categoryTab = categoryTabLists[index]
-        cell.setCell(categoryTab)
+        let index = indexPath.row % categories.count
+        let category = categories[index]
+        cell.setCell(category)
         return cell
     }
 }
@@ -333,7 +332,7 @@ extension MainViewController: UIPageViewControllerDelegate {
         // ここから先はUIPageViewControllerのスワイプアニメーション完了時に発動する
         // MEMO: 表示対象のViewController要素からインデックス値を割り出して、選択中selectedPageViewControllerIndexへ反映する
         if let targetViewController = pageViewController.viewControllers?.first {
-            guard let targetIndex = targetViewControllerLists.firstIndex(of: targetViewController) else {
+            guard let targetIndex = targetViewControllers.firstIndex(of: targetViewController) else {
                 return
             }
             selectedPageViewControllerIndex = targetIndex
@@ -359,7 +358,7 @@ extension MainViewController: UIPageViewControllerDataSource {
     private func setNextViewController(_ viewController: UIViewController, isAfter: Bool) -> UIViewController? {
 
         // MEMO: 現在表示中のインデックス値を取得する
-        guard let currentIndex = targetViewControllerLists.firstIndex(of: viewController) else {
+        guard let currentIndex = targetViewControllers.firstIndex(of: viewController) else {
             return nil
         }
 
@@ -368,14 +367,14 @@ extension MainViewController: UIPageViewControllerDataSource {
 
         // MEMO: 新たに算出したインデックス値に対応するUIPageViewControllerに表示する画面を決定する
         if newIndex < 0 {
-            newIndex = targetViewControllerLists.count - 1
-        } else if newIndex == targetViewControllerLists.count {
+            newIndex = targetViewControllers.count - 1
+        } else if newIndex == targetViewControllers.count {
             newIndex = 0
         }
 
-        let shouldReturnNextViewController = (newIndex >= 0 && newIndex < targetViewControllerLists.count)
+        let shouldReturnNextViewController = (newIndex >= 0 && newIndex < targetViewControllers.count)
         if shouldReturnNextViewController {
-            return targetViewControllerLists[newIndex]
+            return targetViewControllers[newIndex]
         } else {
             return nil
         }
